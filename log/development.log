@@ -353,3 +353,133 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/signin" for 127.0.0.1 at 2018-07-31 14:11:29 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered sessions/new.html.erb (3.5ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/marissazhong/rails-dessert-recipes/app/views/users/_form.html.erb:27: syntax error, unexpected keyword_class, expecting ')'
+...ppend=( f.submit "Submit" class: "btn btn-primary" );@output...
+...                          ^~~~~):
+  
+app/views/users/_form.html.erb:27: syntax error, unexpected keyword_class, expecting ')'
+app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb___2944097444323653106_70300131234160'
+Started GET "/signin" for 127.0.0.1 at 2018-07-31 14:12:08 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb (3.3ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/marissazhong/rails-dessert-recipes/app/views/users/_form.html.erb:27: syntax error, unexpected keyword_class, expecting ')'
+...ubmit :submit => "Submit" class: "btn btn-primary" );@output...
+...                          ^~~~~):
+  
+app/views/users/_form.html.erb:27: syntax error, unexpected keyword_class, expecting ')'
+app/views/sessions/new.html.erb:3:in `_app_views_sessions_new_html_erb___2944097444323653106_70300132466560'
+Started GET "/users/new" for 127.0.0.1 at 2018-07-31 14:12:13 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered users/new.html.erb (3.3ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/marissazhong/rails-dessert-recipes/app/views/users/_form.html.erb:27: syntax error, unexpected keyword_class, expecting ')'
+...ubmit :submit => "Submit" class: "btn btn-primary" );@output...
+...                          ^~~~~):
+  
+app/views/users/_form.html.erb:27: syntax error, unexpected keyword_class, expecting ')'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___1423931278818484262_70300115531320'
+Started GET "/users/new" for 127.0.0.1 at 2018-07-31 14:12:57 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (7.1ms)
+  Rendered users/new.html.erb (9.3ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-07-31 14:13:19 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V/32W7Hp/UiIzIHycPcQzdSgt7XeAdazebFnOvPVuI5YXvsR7VW1qTmo1joULRwgNAnc6tYeDkT1oUrmbSqgqQ==", "user"=>{"username"=>"hello", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest") VALUES (?, ?)[0m  [["username", "hello"], ["password_digest", "$2a$10$SIYCmSM1tpdHQR1.QWybHeTajfKntYJuxrlYYKi.fZvXKuVAaw7h2"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 79ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-31 14:13:19 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (0.3ms)
+Completed 200 OK in 15ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-07-31 14:13:44 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb
+  Rendered users/show.html.erb (0.4ms)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 14:16:40 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.4ms)
+  Rendered recipes/new.html.erb (4.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: 
+    2: <%= form_for(@recipe) do |f| %>
+    3: 
+    4:     <div class="form-group">
+    5:       <%= f.label :name %><br>
+  
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb__1471477041974900323_70300115552760'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___311962852570372723_70300115581140'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 14:40:15 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (6.9ms)
+  Rendered recipes/new.html.erb (9.1ms)
+Completed 200 OK in 44ms (Views: 15.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 14:40:36 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (1.3ms)
+  Rendered recipes/new.html.erb (3.4ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddTimeToRecipe (20180731184405)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "recipes" ADD "prep_time" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "recipes" ADD "cook_time" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731184405"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
