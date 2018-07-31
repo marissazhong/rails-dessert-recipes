@@ -836,3 +836,1031 @@ Migrating to ChangeInstructionsColumnToDirections (20180731193616)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 15:40:21 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (34.7ms)
+  Rendered recipes/new.html.erb (37.2ms)
+Completed 200 OK in 87ms (Views: 45.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 15:40:23 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (10.4ms)
+  Rendered recipes/new.html.erb (12.8ms)
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 15:41:01 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (24.9ms)
+  Rendered recipes/new.html.erb (27.4ms)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 15:51:50 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (215.7ms)
+  Rendered recipes/new.html.erb (217.7ms)
+Completed 500 Internal Server Error in 227ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `intred' for #<#<Class:0x00007fdf9cc15268>:0x00007fdf9cc4ab70>
+Did you mean?  ingred):
+    20:       <%= f.fields_for :ingredients2, :wrapper => false do |ingred| %>
+    21:         <tr class="fields">
+    22:           <td>
+    23:             <%= intred.hidden_field :id %>
+    24:             <%= ingred.text_field :ingredient %>
+    25:             <%= ingred.text_field :quantity %>
+    26:           </td>
+  
+app/views/recipes/_form.html.erb:23:in `block (2 levels) in _app_views_recipes__form_html_erb__2025703622813943864_70299192238180'
+app/views/recipes/_form.html.erb:20:in `block in _app_views_recipes__form_html_erb__2025703622813943864_70299192238180'
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb__2025703622813943864_70299192238180'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__1853084223115632867_70299192288560'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 15:51:56 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (256.6ms)
+  Rendered recipes/new.html.erb (258.7ms)
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `link_to_remove' for #<ActionView::Helpers::FormBuilder:0x00007fdf9ba60dd8>):
+    24:             <%= ingred.text_field :ingredient %>
+    25:             <%= ingred.text_field :quantity %>
+    26:           </td>
+    27:           <td><%= ingred.link_to_remove "Remove" %></td>
+    28:         </tr>
+    29:       <% end %>
+    30:         <tr>
+  
+app/views/recipes/_form.html.erb:27:in `block (2 levels) in _app_views_recipes__form_html_erb__2025703622813943864_70299199020120'
+app/views/recipes/_form.html.erb:20:in `block in _app_views_recipes__form_html_erb__2025703622813943864_70299199020120'
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb__2025703622813943864_70299199020120'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__1853084223115632867_70299183078940'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 15:55:48 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (207.6ms)
+  Rendered recipes/new.html.erb (209.5ms)
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `link_to_remove' for #<ActionView::Helpers::FormBuilder:0x00007fdf9dcd9220>):
+    24:             <%= ingred.text_field :ingredient %>
+    25:             <%= ingred.text_field :quantity %>
+    26:           </td>
+    27:           <td><%= ingred.link_to_remove "Remove" %></td>
+    28:         </tr>
+    29:       <% end %>
+    30:         <tr>
+  
+app/views/recipes/_form.html.erb:27:in `block (2 levels) in _app_views_recipes__form_html_erb__2025703622813943864_70299200631440'
+app/views/recipes/_form.html.erb:20:in `block in _app_views_recipes__form_html_erb__2025703622813943864_70299200631440'
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb__2025703622813943864_70299200631440'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__1853084223115632867_70299191792320'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:00:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (182.4ms)
+  Rendered recipes/new.html.erb (185.0ms)
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (The asset "defaults.js" is not present in the asset pipeline.):
+    1: <head>
+    2:   <%= javascript_include_tag :defaults, "nested_form" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb___2206529272626221220_70294851442260'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___984054155181751511_70294867794300'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:03:28 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (173.9ms)
+  Rendered recipes/new.html.erb (176.7ms)
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (The asset "defaults.js" is not present in the asset pipeline.):
+    1: <head>
+    2:   <%= javascript_include_tag :defaults, "nested_form" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb___2595013488476513138_70302203404600'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__864078697268742689_70302196384220'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:04:27 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.8ms)
+  Rendered recipes/new.html.erb (6.8ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (The asset "nested_form.js" is not present in the asset pipeline.):
+    1: <head>
+    2:   <%= javascript_include_tag "nested_form" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb___2595013488476513138_70302260516340'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__864078697268742689_70302203965800'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:05:40 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.8ms)
+  Rendered recipes/new.html.erb (6.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The asset "defaults.js" is not present in the asset pipeline.):
+    1: <head>
+    2:   <%= javascript_include_tag :defaults, "nested_form" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb___2595013488476513138_70302252930560'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__864078697268742689_70302252962840'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:08:15 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.3ms)
+  Rendered recipes/new.html.erb (6.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The asset "defaults.js" is not present in the asset pipeline.):
+    1: <head>
+    2:   <%= javascript_include_tag :defaults, "nested_form" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb___2595013488476513138_70302260625480'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__864078697268742689_70302260649520'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:10:42 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.7ms)
+  Rendered recipes/new.html.erb (6.7ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The asset "application.js" is not present in the asset pipeline.):
+    1: <head>
+    2:   <%= javascript_include_tag "application" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb___2595013488476513138_70302200398900'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__864078697268742689_70302200470760'
+Started POST "/__web_console/repl_sessions/dbc6f3bfda2de8f5b58c2ec44b9d1d19/trace" for 127.0.0.1 at 2018-07-31 16:11:07 -0400
+Started POST "/__web_console/repl_sessions/dbc6f3bfda2de8f5b58c2ec44b9d1d19/trace" for 127.0.0.1 at 2018-07-31 16:11:10 -0400
+Started POST "/__web_console/repl_sessions/dbc6f3bfda2de8f5b58c2ec44b9d1d19/trace" for 127.0.0.1 at 2018-07-31 16:11:13 -0400
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:12:23 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.5ms)
+  Rendered recipes/new.html.erb (6.5ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (The asset "application.js" is not present in the asset pipeline.):
+    1: <head>
+    2:   <%= javascript_include_tag "application" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb___2595013488476513138_70302264460180'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__864078697268742689_70302264495920'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:15:19 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.4ms)
+  Rendered recipes/new.html.erb (6.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The asset "application.js" is not present in the asset pipeline.):
+    1: <head>
+    2:   <%= javascript_include_tag "application" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb___2595013488476513138_70302253552060'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__864078697268742689_70302253584360'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:15:21 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (10.4ms)
+  Rendered recipes/new.html.erb (12.5ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (The asset "application.js" is not present in the asset pipeline.):
+    1: <head>
+    2:   <%= javascript_include_tag "application" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb___2595013488476513138_70302207219120'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__864078697268742689_70302207386600'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:16:02 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (177.8ms)
+  Rendered recipes/new.html.erb (180.9ms)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/marissazhong/rails-dessert-recipes/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/nested_form-0.3.2/vendor/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /usr/local/lib/ruby/gems/2.5.0/gems/actionview-5.1.4/lib/assets/compiled
+  /usr/local/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/marissazhong/rails-dessert-recipes/node_modules
+  /Users/marissazhong/rails-dessert-recipes/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /usr/local/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/images):
+    1: <head>
+    2:   <%= javascript_include_tag "application" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/assets/javascripts/application.js:1
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb__1898398671879662100_70247824094380'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___251069636665551978_70247813214520'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:16:30 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (35.0ms)
+  Rendered recipes/new.html.erb (36.9ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Invalid association. Make sure that accepts_nested_attributes_for is used for :ingredients2 association.):
+    32:         </tr>
+    33:       <% end %>
+    34:         <tr>
+    35:           <td><%= f.link_to_add "Add", :ingredients2 %></td>
+    36:         </tr>
+    37:     </table>
+    38: 
+  
+app/views/recipes/_form.html.erb:35:in `block in _app_views_recipes__form_html_erb__1898398671879662100_70247882295820'
+app/views/recipes/_form.html.erb:6:in `_app_views_recipes__form_html_erb__1898398671879662100_70247882295820'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___251069636665551978_70247882328100'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:16:48 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (40.6ms)
+  Rendered recipes/new.html.erb (42.7ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `ingredient' for #<Ingredient id: nil, name: nil>
+Did you mean?  increment):
+    25:         <tr class="fields">
+    26:           <td>
+    27:             <%= ingred.hidden_field :id %>
+    28:             <%= ingred.text_field :ingredient %>
+    29:             <%= ingred.text_field :quantity %>
+    30:           </td>
+    31:           <td><%= ingred.link_to_remove "Remove" %></td>
+  
+app/views/recipes/_form.html.erb:28:in `block (2 levels) in _app_views_recipes__form_html_erb__1898398671879662100_70247817576040'
+app/views/recipes/_form.html.erb:6:in `_app_views_recipes__form_html_erb__1898398671879662100_70247817576040'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___251069636665551978_70247817656060'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:19:28 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (23.7ms)
+  Rendered recipes/new.html.erb (26.0ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `quantity' for #<Ingredient id: nil, name: nil>):
+    26:           <td>
+    27:             <%= ingred.hidden_field :id %>
+    28:             <%= ingred.text_field :name %>
+    29:             <%= ingred.text_field :quantity %>
+    30:           </td>
+    31:           <td><%= ingred.link_to_remove "Remove" %></td>
+    32:         </tr>
+  
+app/views/recipes/_form.html.erb:29:in `block (2 levels) in _app_views_recipes__form_html_erb__1898398671879662100_70247882393680'
+app/views/recipes/_form.html.erb:6:in `_app_views_recipes__form_html_erb__1898398671879662100_70247882393680'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___251069636665551978_70247882429520'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:20:18 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (15.7ms)
+  Rendered recipes/new.html.erb (17.8ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `quantity' for #<Ingredient id: nil, name: nil>):
+    25:         <tr class="fields">
+    26:           <td>
+    27:             <%= ingred.hidden_field :id %>
+    28:             <%= ingred.text_field :quantity %>
+    29: 
+    30:             <%= ingred.text_field :name %>
+    31:           </td>
+  
+app/views/recipes/_form.html.erb:28:in `block (2 levels) in _app_views_recipes__form_html_erb__1898398671879662100_70247878628080'
+app/views/recipes/_form.html.erb:6:in `_app_views_recipes__form_html_erb__1898398671879662100_70247878628080'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___251069636665551978_70247878660360'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:20:40 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (8.1ms)
+  Rendered recipes/new.html.erb (10.3ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:21:04 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (15.8ms)
+  Rendered recipes/new.html.erb (18.0ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `quantity' for #<Ingredient id: nil, name: nil>):
+    26:           <td>
+    27:             <%= ingred.hidden_field :id %>
+    28:             <%= ingred.text_field :name %>
+    29:             <%= ingred.text_field :quantity %>
+    30:           </td>
+    31:           <td><%= ingred.link_to_remove "Remove" %></td>
+    32:         </tr>
+  
+app/views/recipes/_form.html.erb:29:in `block (2 levels) in _app_views_recipes__form_html_erb__1898398671879662100_70247878302980'
+app/views/recipes/_form.html.erb:6:in `_app_views_recipes__form_html_erb__1898398671879662100_70247878302980'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___251069636665551978_70247878335240'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:22:04 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (22.8ms)
+  Rendered recipes/new.html.erb (24.7ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `quantity' for #<Ingredient id: nil, name: nil>):
+    26:           <td>
+    27:             <%= ingred.hidden_field :id %>
+    28:             <%= ingred.text_field :name %>
+    29:             <%= ingred.text_field :quantity %>
+    30:           </td>
+    31:           <td><%= ingred.link_to_remove "Remove" %></td>
+    32:         </tr>
+  
+app/views/recipes/_form.html.erb:29:in `block (2 levels) in _app_views_recipes__form_html_erb__1898398671879662100_70247885659160'
+app/views/recipes/_form.html.erb:6:in `_app_views_recipes__form_html_erb__1898398671879662100_70247885659160'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___251069636665551978_70247885703120'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:24:08 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (11.2ms)
+  Rendered recipes/new.html.erb (13.2ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (Invalid association. Make sure that accepts_nested_attributes_for is used for :ingredients association.):
+    32:         </tr>
+    33:       <% end %>
+    34:         <tr>
+    35:           <td><%= f.link_to_add "Add", :ingredients %></td>
+    36:         </tr>
+    37:     </table>
+    38: 
+  
+app/views/recipes/_form.html.erb:35:in `block in _app_views_recipes__form_html_erb__1898398671879662100_70247881491760'
+app/views/recipes/_form.html.erb:6:in `_app_views_recipes__form_html_erb__1898398671879662100_70247881491760'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___251069636665551978_70247881580040'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:24:22 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (18.2ms)
+  Rendered recipes/new.html.erb (20.4ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<RecipeIngredient:0x00007fc7b70a0a88>):
+    25:         <tr class="fields">
+    26:           <td>
+    27:             <%= ingred.hidden_field :id %>
+    28:             <%= ingred.text_field :name %>
+    29:             <%= ingred.text_field :quantity %>
+    30:           </td>
+    31:           <td><%= ingred.link_to_remove "Remove" %></td>
+  
+app/views/recipes/_form.html.erb:28:in `block (2 levels) in _app_views_recipes__form_html_erb__1898398671879662100_70247873238560'
+app/views/recipes/_form.html.erb:6:in `_app_views_recipes__form_html_erb__1898398671879662100_70247873238560'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___251069636665551978_70247873272900'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:40:35 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (23.1ms)
+  Rendered recipes/new.html.erb (25.1ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `input_name' for #<RecipeIngredient:0x00007fc7b06c6978>):
+    25:         <tr class="fields">
+    26:           <td>
+    27:             <%= ingred.hidden_field :id %>
+    28:             <%= ingred.text_field :input_name %>
+    29:             <%= ingred.text_field :quantity %>
+    30:           </td>
+    31:           <td><%= ingred.link_to_remove "Remove" %></td>
+  
+app/views/recipes/_form.html.erb:28:in `block (2 levels) in _app_views_recipes__form_html_erb__1898398671879662100_70247834119660'
+app/views/recipes/_form.html.erb:6:in `_app_views_recipes__form_html_erb__1898398671879662100_70247834119660'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb___251069636665551978_70247834216880'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNameToRecipeIngredients (20180731204102)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "recipe_ingredients" ADD "input_name" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731204102"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 16:42:00 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (207.4ms)
+  Rendered recipes/new.html.erb (210.5ms)
+Completed 200 OK in 258ms (Views: 217.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:02:18 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (8.8ms)
+  Rendered recipes/new.html.erb (10.8ms)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:07:53 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (8.1ms)
+  Rendered recipes/new.html.erb (10.1ms)
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:09:51 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (8.7ms)
+  Rendered recipes/new.html.erb (10.8ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:09:52 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (8.5ms)
+  Rendered recipes/new.html.erb (10.5ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:12:03 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (15.1ms)
+  Rendered recipes/new.html.erb (17.0ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:12:05 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (8.2ms)
+  Rendered recipes/new.html.erb (10.4ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:26:05 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (7.0ms)
+  Rendered recipes/new.html.erb (9.1ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:26:45 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (10.6ms)
+  Rendered recipes/new.html.erb (12.8ms)
+Completed 200 OK in 40ms (Views: 18.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:27:16 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (7.5ms)
+  Rendered recipes/new.html.erb (9.6ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:27:38 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (206.4ms)
+  Rendered recipes/new.html.erb (209.2ms)
+Completed 200 OK in 259ms (Views: 219.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:30:33 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (8.1ms)
+  Rendered recipes/new.html.erb (10.8ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:30:58 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (7.0ms)
+  Rendered recipes/new.html.erb (9.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/marissazhong/rails-dessert-recipes/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/nested_form-0.3.2/vendor/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /usr/local/lib/ruby/gems/2.5.0/gems/actionview-5.1.4/lib/assets/compiled
+  /usr/local/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /Users/marissazhong/rails-dessert-recipes/node_modules
+  /Users/marissazhong/rails-dessert-recipes/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /usr/local/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /usr/local/lib/ruby/gems/2.5.0/gems/bootstrap-sass-3.3.7/assets/images):
+    1: <head>
+    2:   <%= javascript_include_tag "application" %>
+    3: </head>
+    4: 
+    5: <body>
+  
+app/assets/javascripts/application.js:1
+app/views/recipes/_form.html.erb:2:in `_app_views_recipes__form_html_erb__2482186949411937751_70361475481980'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__3449016029775526840_70361424065020'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:32:14 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.6ms)
+  Rendered recipes/new.html.erb (6.6ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:33:49 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.5ms)
+  Rendered recipes/new.html.erb (6.4ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:34:05 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.8ms)
+  Rendered recipes/new.html.erb (7.2ms)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:34:16 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.7ms)
+  Rendered recipes/new.html.erb (6.6ms)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:34:41 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (4.3ms)
+  Rendered recipes/new.html.erb (6.3ms)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:37:05 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (242.1ms)
+  Rendered recipes/new.html.erb (244.1ms)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `ingred' for #<#<Class:0x00007ffc972d39d0>:0x00007ffc9755c4e0>):
+    35:     <table id="directions-table">
+    36:       <tr>
+    37:         <%= f.fields_for :directions do |direct| %>
+    38:           <td><%= ingred.text_field :direction %></td>
+    39:         <% end %>
+    40:       </tr>
+    41:     </table>
+  
+app/views/recipes/_form.html.erb:38:in `block (2 levels) in _app_views_recipes__form_html_erb__2482186949411937751_70361423723380'
+app/views/recipes/_form.html.erb:37:in `block in _app_views_recipes__form_html_erb__2482186949411937751_70361423723380'
+app/views/recipes/_form.html.erb:4:in `_app_views_recipes__form_html_erb__2482186949411937751_70361423723380'
+app/views/recipes/new.html.erb:3:in `_app_views_recipes_new_html_erb__3449016029775526840_70361423734820'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:37:13 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.2ms)
+  Rendered recipes/new.html.erb (4.2ms)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:37:44 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.3ms)
+  Rendered recipes/new.html.erb (4.6ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:40:13 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.8ms)
+  Rendered recipes/new.html.erb (5.0ms)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2018-07-31 17:40:14 -0400
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for RecipesController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:40:46 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (7.6ms)
+  Rendered recipes/new.html.erb (9.6ms)
+Completed 200 OK in 43ms (Views: 16.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:46:06 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.9ms)
+  Rendered recipes/new.html.erb (5.0ms)
+Completed 200 OK in 58ms (Views: 11.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:46:37 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (3.1ms)
+  Rendered recipes/new.html.erb (5.0ms)
+Completed 200 OK in 45ms (Views: 11.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:46:57 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (3.6ms)
+  Rendered recipes/new.html.erb (5.7ms)
+Completed 200 OK in 42ms (Views: 11.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:47:06 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.5ms)
+  Rendered recipes/new.html.erb (4.6ms)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:47:30 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.5ms)
+  Rendered recipes/new.html.erb (4.5ms)
+Completed 200 OK in 15ms (Views: 10.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:47:41 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.9ms)
+  Rendered recipes/new.html.erb (5.0ms)
+Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:49:36 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.6ms)
+  Rendered recipes/new.html.erb (4.5ms)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:49:57 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.3ms)
+  Rendered recipes/new.html.erb (4.3ms)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:50:03 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.6ms)
+  Rendered recipes/new.html.erb (4.6ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:50:16 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.3ms)
+  Rendered recipes/new.html.erb (4.2ms)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:50:29 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.4ms)
+  Rendered recipes/new.html.erb (4.3ms)
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:50:41 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.3ms)
+  Rendered recipes/new.html.erb (4.3ms)
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:50:58 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.5ms)
+  Rendered recipes/new.html.erb (4.6ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:51:45 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.5ms)
+  Rendered recipes/new.html.erb (4.8ms)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:51:52 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (3.2ms)
+  Rendered recipes/new.html.erb (5.5ms)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:52:11 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.8ms)
+  Rendered recipes/new.html.erb (5.5ms)
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:53:02 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.6ms)
+  Rendered recipes/new.html.erb (4.6ms)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:53:12 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.5ms)
+  Rendered recipes/new.html.erb (4.5ms)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:53:24 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.4ms)
+  Rendered recipes/new.html.erb (4.4ms)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:53:33 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.5ms)
+  Rendered recipes/new.html.erb (4.7ms)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:53:46 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.4ms)
+  Rendered recipes/new.html.erb (4.3ms)
+Completed 200 OK in 14ms (Views: 10.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-07-31 17:53:58 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb
+  Rendered recipes/_form.html.erb (2.2ms)
+  Rendered recipes/new.html.erb (4.1ms)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+

@@ -3,5 +3,5 @@ class Recipe < ActiveRecord::Base
     has_many :ingredients, :through => :recipe_ingredients
     belongs_to :user
 
-    accepts_nested_attributes_for :ingredients
+    accepts_nested_attributes_for :recipe_ingredients
 end

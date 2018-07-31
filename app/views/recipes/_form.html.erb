@@ -1,4 +1,6 @@
 
+
+<body>
 <%= form_for(@recipe) do |f| %>
 
     <div class="form-group">
@@ -16,50 +18,66 @@
       <%= f.text_field :cook_time, class: "form-control" %>
     </div><br>
 
-    <%= f.fields_for :ingredients do |ingred| %>
-      <div id="ingredients-group">
-        <%= f.label "Ingredients:" %><br>
-        <%= ingred.text_field :ingredient_1 %>
-        <%= ingred.text_field :quantity_1 %><br>
-        <%= ingred.text_field :ingredient_2 %>
-        <%= ingred.text_field :quantity_2 %><br>
-        <%= ingred.text_field :ingredient_3 %>
-        <%= ingred.text_field :quantity_3 %><br>
-        <%= ingred.text_field :ingredient_4 %>
-        <%= ingred.text_field :quantity_4 %><br>
-        <%= ingred.text_field :ingredient_5 %>
-        <%= ingred.text_field :quantity_5 %><br>
-        <%= ingred.text_field :ingredient_6 %>
-        <%= ingred.text_field :quantity_6 %><br>
-        <%= ingred.text_field :ingredient_7 %>
-        <%= ingred.text_field :quantity_7 %><br>
-        <%= ingred.text_field :ingredient_8 %>
-        <%= ingred.text_field :quantity_8 %><br>
-        <%= ingred.text_field :ingredient_9 %>
-        <%= ingred.text_field :quantity_9 %><br>
-        <%= ingred.text_field :ingredient_10 %>
-        <%= ingred.text_field :quantity_10 %><br>
-      </div>
-    <% end %>
+    <table id="ingredients-table">
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+      </tr>
+      <%= f.fields_for :recipe_ingredients do |ingred| %>
+        <tr>
+          <td><%= ingred.text_field :input_name %></td>
+          <td><%= ingred.text_field :quantity %></td>
+        </tr>
+      <% end %>
+    </table>
+    <tr><button type="button" id="add-ingredient">Add Ingredient</button></tr>
 
-    <%= f.fields_for :directions do |direct| %>
-      <div id="directions-group">
-        <%= f.label "Directions:" %><br>
-        1.  <%= direct.text_field :direction_1 %><br>
-        2.  <%= direct.text_field :direction_2 %><br>
-        3.  <%= direct.text_field :direction_3 %><br>
-        4.  <%= direct.text_field :direction_4 %><br>
-        5.  <%= direct.text_field :direction_5 %><br>
-        6.  <%= direct.text_field :direction_6 %><br>
-        7.  <%= direct.text_field :direction_7 %><br>
-        8.  <%= direct.text_field :direction_8 %><br>
-        9.  <%= direct.text_field :direction_9 %><br>
-        10. <%= direct.text_field :direction_10 %><br>
-      </div>
-    <% end %>
+    <br></br>
+
+    <table id="directions-table">
+      <tr>
+        <th>Direction</th>
+      </tr>
+      <tr>
+        <%= f.fields_for :directions do |direct| %>
+          <td>1. <%= direct.text_field :name %></td>
+        <% end %>
+      </tr>
+    </table>
+    <tr><button type="button" id="add-direction">Add Direction</button></tr>
+
+    <br></br>
 
     <div class="actions">
       <%= f.submit class: "btn btn-primary" %>
     </div>
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        let i = 1;
+        let j = 1;
+        $("#add-ingredient").click(function(){
+          $("#ingredients-table").append('\
+            <tr> \
+              <td><input type="text" name="recipe[recipe_ingredients_attributes]['+i+'][input_name]"</td> \
+              <td><input type="text" name="recipe[recipe_ingredients_attributes]['+i+'][quantity]"</td> \
+            </tr><br> \
+          ');
+          i++;
+        });
+        $("#add-direction").click(function(){
+          $("#directions-table").append('\
+            <tr> \
+              <td>'+(j+1)+'. <input type="text" name="recipe[directions_attributes]['+j+'][name]"</td> \
+            </tr> \
+          ');
+          j++;
+        });
+      });
+    </script>
 <% end %>
+
+</body>
+
