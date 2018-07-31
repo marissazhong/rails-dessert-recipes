@@ -2,8 +2,61 @@
 <%= form_for(@recipe) do |f| %>
 
     <div class="form-group">
-      <%= f.label :name %><br>
-      <%= f.text_field :name, class: "form-control" %></div><br>
+      <%= f.label :name, "Name:"%><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div><br>
+
+    <div class="form-group">
+      <%= f.label :prep_time, "Prep Time:" %><br>
+      <%= f.text_field :prep_time, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :cook_time, "Cook Time:" %><br>
+      <%= f.text_field :cook_time, class: "form-control" %>
+    </div><br>
+
+    <%= f.fields_for :ingredients do |ingred| %>
+      <div id="ingredients-group">
+        <%= f.label "Ingredients:" %><br>
+        <%= ingred.text_field :ingredient_1 %>
+        <%= ingred.text_field :quantity_1 %><br>
+        <%= ingred.text_field :ingredient_2 %>
+        <%= ingred.text_field :quantity_2 %><br>
+        <%= ingred.text_field :ingredient_3 %>
+        <%= ingred.text_field :quantity_3 %><br>
+        <%= ingred.text_field :ingredient_4 %>
+        <%= ingred.text_field :quantity_4 %><br>
+        <%= ingred.text_field :ingredient_5 %>
+        <%= ingred.text_field :quantity_5 %><br>
+        <%= ingred.text_field :ingredient_6 %>
+        <%= ingred.text_field :quantity_6 %><br>
+        <%= ingred.text_field :ingredient_7 %>
+        <%= ingred.text_field :quantity_7 %><br>
+        <%= ingred.text_field :ingredient_8 %>
+        <%= ingred.text_field :quantity_8 %><br>
+        <%= ingred.text_field :ingredient_9 %>
+        <%= ingred.text_field :quantity_9 %><br>
+        <%= ingred.text_field :ingredient_10 %>
+        <%= ingred.text_field :quantity_10 %><br>
+      </div>
+    <% end %>
+
+    <%= f.fields_for :directions do |direct| %>
+      <div id="directions-group">
+        <%= f.label "Directions:" %><br>
+        1.  <%= direct.text_field :direction_1 %><br>
+        2.  <%= direct.text_field :direction_2 %><br>
+        3.  <%= direct.text_field :direction_3 %><br>
+        4.  <%= direct.text_field :direction_4 %><br>
+        5.  <%= direct.text_field :direction_5 %><br>
+        6.  <%= direct.text_field :direction_6 %><br>
+        7.  <%= direct.text_field :direction_7 %><br>
+        8.  <%= direct.text_field :direction_8 %><br>
+        9.  <%= direct.text_field :direction_9 %><br>
+        10. <%= direct.text_field :direction_10 %><br>
+      </div>
+    <% end %>
 
     <div class="actions">
       <%= f.submit class: "btn btn-primary" %>

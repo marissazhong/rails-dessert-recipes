@@ -23,7 +23,9 @@ class RecipesController < ApplicationController
         end
 
         def recipe_params
-            params.require(:attraction).permit(:name)
+            params.require(:recipe).permit(:name, :prep_time, :cook_time, ingredients_attributes:
+            [:ingredient_1, :quantity_1, :ingredient_2, :quantity_2, :ingredient_3, :quantity_3, :ingredient_4, :quantity_4, :ingredient_5, :quantity_5, :ingredient_6, :quantity_6, :ingredient_7, :quantity_7, :ingredient_8, :quantity_8, :ingredient_9, :quantity_9, :ingredient_10, :quantity_10]
+            )
         end
 
 end
