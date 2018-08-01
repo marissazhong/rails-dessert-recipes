@@ -15,9 +15,9 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:user][:username])
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to user_path(@user), notice: "Welcome back to Sweet Tooth Recipes!"
+      redirect_to user_path(@user)
     else
-      redirect_to signin_path
+      redirect_to signin_path, notice: "Login failed. Please try again."
     end
   end
 

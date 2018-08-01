@@ -1,7 +1,20 @@
 <h1>Please Sign In:</h1>
 
+<p id="notice"><%= notice %></p>
+
 <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
   
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h3>There were some errors:</h3>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <div class="form-group">
       <%= f.label :username, "Enter your username: " %><br>
       <%= f.text_field :username, class: "form-control" %>
