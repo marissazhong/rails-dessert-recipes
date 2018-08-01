@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sweet Tooth Recipes</title>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav>
+        <%= link_to "Home", recipes_path%> [Current User: <%=@user.username%>] <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
