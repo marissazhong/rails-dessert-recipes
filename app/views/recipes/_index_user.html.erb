@@ -1,8 +1,0 @@
-
-<% if all_user_recipes %>
-    <% all_user_recipes.each do |recipe| %>
-        <%= link_to recipe.name, @recipe %><br>
-    <% end %>
-<% else %>
-    You have no recipes yet. <%= link_to "Create one now!", new_recipe_path %>
-<% end %>

@@ -2,8 +2,8 @@
 
 <h3>Recipe Index:</h3>
 
-<%= render partial: 'recipes/index_all', locals: {all_recipes: @recipes} %>  
+<%= render partial: 'recipes/index', locals: {all_recipes: @recipes} %>  
 
 <h3>Your Recipes:</h3>
 
-<%= render partial: 'recipes/index_user', locals: {all_user_recipes: @user.recipes} %>  
+<%= render partial: 'recipes/index', locals: {all_recipes: @user.recipes} %>  
