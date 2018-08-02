@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
     before_action :set_recipe, only: [:show, :edit]
+    before_action :set_user
 
     # /recipes index page showing user's recipes and all recipes
     def index
@@ -15,26 +16,20 @@ class RecipesController < ApplicationController
     end
 
     def create
-        @recipe = Recipe.new(recipe_params)
+        @recipe = @user.recipes.build(recipe_params(:name, :prep_time, :cook_time))
+        @recipe.directions = params[:recipe][:directions].values
+        
+        # find or create ingredient by name
+        params[:recipe][:recipe_ingredients_attributes].each do |k,v|
+            ingredient = Ingredient.find_or_create_by(name: v["input_name"].downcase)
+            @recipe.ingredients << ingredient
+        end
 
-        # # combine directions into one string
-        # combined = ""
-        # params[:recipe][:directions].each do |k,v|
-        #     combined += (k.to_i+1).to_s + ". " + v + "<br \>"
-        # end
-        # @recipe.directions = combined
-
-        # # find or create ingredient by name
-        # params[:recipe][:recipe_ingredients_attributes].each do |k,v|
-        #     ingredient = Ingredient.all.find_by(name: v["input_name"].downcase)
-        #     if !ingredient
-        #         ingredient = Ingredient.create(name: v["input_name"].downcase)
-        #     end
-        #     @recipe.ingredients << ingredient
-        # end
-
-        @recipe.save
-        redirect_to recipe_path(@recipe)
+        if @recipe.save
+            redirect_to recipe_path(@recipe)
+        else
+            render :new
+        end
 
     end
 
@@ -47,8 +42,12 @@ class RecipesController < ApplicationController
             @recipe = Recipe.find(params[:id])
         end
 
-        def recipe_params
-            params.require(:recipe).permit(:name, :prep_time, :cook_time)
+        def set_user
+            @user = current_user
+        end
+
+        def recipe_params(*args)
+            params.require(:recipe).permit(*args)
         end
 
 end
