@@ -19,10 +19,10 @@ recipe1 = {name: "Vanilla Cupcakes", prep_time: 20, cook_time: 14, recipe_ingred
 
 recipes = [recipe1]
 
-recipes.each do |recipe|
-    new_recipe = Recipe.create(name: recipe["name"], prep_time: recipe["prep_time"], cook_time: recipe["cook_time"], user_id: 1)
-    recipe[:recipe_ingredients_attributes].each do |id,ingredient|
-        current_ingredient = Ingredient.find_or_create_by(name: ingredient["input_name"])
-        new_recipe.recipe_ingredients.build(ingredient_id: current_ingredient.id, recipe_id: new_recipe.id, input_name: ingredient["input_name"], quantity: ingredient["quantity"])
-    end
-end
+# recipes.each do |recipe|
+#     new_recipe = Recipe.create(name: recipe["name"], prep_time: recipe["prep_time"], cook_time: recipe["cook_time"], user_id: 1)
+#     recipe[:recipe_ingredients_attributes].each do |id,ingredient|
+#         current_ingredient = Ingredient.find_or_create_by(name: ingredient["input_name"])
+#         new_recipe.recipe_ingredients.build(ingredient_id: current_ingredient.id, recipe_id: new_recipe.id, input_name: ingredient["input_name"], quantity: ingredient["quantity"])
+#     end
+# end

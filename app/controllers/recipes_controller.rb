@@ -5,7 +5,6 @@ class RecipesController < ApplicationController
     # /recipes index page showing user's recipes and all recipes
     def index
         @recipes = Recipe.all
-        @user_recipes = Recipe.where(user_id: @user.id).all
         render :'users/show'
     end
 
@@ -14,7 +13,7 @@ class RecipesController < ApplicationController
 
     def new
         @recipe = Recipe.new
-        @recipe.ingredients_recipe.build(input_name: 'flour', quantity: '2 cups')
+        @recipe.ingredients_recipes.build(input_name: 'flour', quantity: '2 cups')
     end
 
     def create
@@ -22,14 +21,13 @@ class RecipesController < ApplicationController
         @recipe.directions = params[:recipe][:directions].values
         
         # find or create ingredient by name
-        params[:recipe][:ingredients_recipe_attributes].each do |k,v|
+        params[:recipe][:ingredients_recipes_attributes].each do |k,v|
             ingredient = Ingredient.find_or_create_by(name: v["input_name"].downcase)
             # if !ingredient
             #     RecipeIngredient.create(input_name: v["input_name"], quantity: v["quantity"])
             #     ingredient = @recipe.ingredients.create(name: v["input_name"].downcase)
             # end
             @recipe.ingredients_recipes.build(ingredient_id: ingredient.id, recipe_id: @recipe.id, input_name: v["input_name"], quantity: v["quantity"])
-            #@recipe.ingredients << ingredient
         end
 
         if @recipe.save

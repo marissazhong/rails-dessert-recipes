@@ -1,5 +1,9 @@
 class IngredientsController < ApplicationController
-    before_action :authenticate_user!
+
+    def index
+        @ingredients = Ingredient.all
+        render layout: false
+    end
 
     def new
         @ingredient = Ingredient.new
@@ -8,4 +12,5 @@ class IngredientsController < ApplicationController
     def create
         @ingredient = Ingredient.create(name: params[:name])
     end
+    
 end

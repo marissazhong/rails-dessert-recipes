@@ -20,7 +20,7 @@
         <th>Name</th>
         <th>Amount</th>
       </tr>
-      <%= f.fields_for :recipe_ingredients do |ingred| %>
+      <%= f.fields_for :ingredients_recipes do |ingred| %>
         <tr>
           <td><%= ingred.text_field :input_name %></td>
           <td><%= ingred.text_field :quantity %></td>
@@ -58,8 +58,8 @@
         $("#add-ingredient").click(function(){
           $("#ingredients-table").append('\
             <tr> \
-              <td><input type="text" name="recipe[recipe_ingredients_attributes]['+i+'][input_name]"</td> \
-              <td><input type="text" name="recipe[recipe_ingredients_attributes]['+i+'][quantity]"</td> \
+              <td><input type="text" name="recipe[ingredients_recipes_attributes]['+i+'][input_name]"</td> \
+              <td><input type="text" name="recipe[ingredients_recipes_attributes]['+i+'][quantity]"</td> \
             </tr><br> \
           ');
           i++;

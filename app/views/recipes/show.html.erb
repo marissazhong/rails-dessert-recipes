@@ -6,8 +6,20 @@
 <h3>Cook Time: <%=@recipe.cook_time%> minutes</h3>
 
 <h2>Ingredients:</h2>
-<% @recipe.ingredients %>
 
+<table id="ingredients-table">
+    <tr>
+    <th>Name</th>
+    <th>Amount</th>
+    </tr>
+    <% @recipe.ingredients_recipes.each do |ingredient| %>
+        <tr>
+            <td><%= ingredient["input_name"].titleize %></td>
+            <td><%= ingredient["quantity"] %></td>
+        </tr>
+    <% end %>
+</table>
+    
 <h2>Directions:</h2>
 
 <ol><% @recipe.directions.scan(/"([^"]*)"/).each do |direction| %>
