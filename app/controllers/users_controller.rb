@@ -8,13 +8,11 @@ class UsersController < ApplicationController
     
     def create
         @user = User.new(user_params)
-        respond_to do |format|
-            if @user.save
-                session[:user_id] = @user.id
-                format.html { redirect_to user_path(@user), notice: "Welcome to Sweet Tooth Recipes!" }
-            else
-                format.html { render :new }
-            end
+        if @user.save
+            session[:user_id] = @user.id
+            redirect_to user_path(@user), notice: "Welcome to Sweet Tooth Recipes!"
+        else
+            render :new, layout: false
         end
     end
     
@@ -25,12 +23,10 @@ class UsersController < ApplicationController
     end
   
     def update
-        respond_to do |format|
-            if @user.update(user_params)
-                format.html { redirect_to @user, notice: 'User was successfully updated.' }
-            else
-                format.html { render :edit }
-            end
+        if @user.update(user_params)
+            redirect_to @user, notice: 'User was successfully updated.'
+        else
+            render :edit
         end
     end
 
@@ -41,7 +37,7 @@ class UsersController < ApplicationController
     end
     
     def user_params
-        params.require(:user).permit(:username, :password)
+        params.require(:user).permit(:username, :email, :password)
     end 
 
 end

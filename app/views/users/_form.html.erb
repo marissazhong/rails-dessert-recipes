@@ -19,8 +19,13 @@
     </div><br>
 
     <div class="form-group">
-    <%= f.label :password, "Enter your password: " %><br>
-    <%= f.password_field :password, class: "form-control" %>
+      <%= f.label :email, "Enter your email: " %><br>
+      <%= f.text_field :email, class: "form-control" %>
+    </div><br>
+
+    <div class="form-group">
+      <%= f.label :password, "Enter your password: " %><br>
+      <%= f.password_field :password, class: "form-control" %>
     </div><br>
   
     <div class="actions">

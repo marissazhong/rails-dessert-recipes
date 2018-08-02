@@ -7,8 +7,11 @@
   </head>
   <body>
     <nav>
-        <%= link_to "Home", recipes_path%> [Current User: <%=@user.username%>] <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to "Home", recipes_path%> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
     </nav>
+    
+    <p id="notice"><%= notice %></p>
+
     <%= yield %>
   </body>
 </html>
