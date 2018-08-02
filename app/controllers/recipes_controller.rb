@@ -1,7 +1,8 @@
 class RecipesController < ApplicationController
     before_action :set_recipe, only: [:show, :edit]
     before_action :set_user
-
+    before_action :require_logged_in
+    
     # /recipes index page showing user's recipes and all recipes
     def index
         @recipes = Recipe.all
