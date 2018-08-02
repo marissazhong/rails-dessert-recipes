@@ -3,31 +3,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
-  
-    <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h3>There were some errors:</h3>
-        <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <%= render 'users/form' %>  
+<% end %>
 
-    <div class="form-group">
-      <%= f.label :username, "Enter your username: " %><br>
-      <%= f.text_field :username, class: "form-control" %>
-    </div><br>
-
-    <div class="form-group">
-    <%= f.label :password, "Enter your password: " %><br>
-    <%= f.password_field :password, class: "form-control" %>
-    </div><br>
-  
-    <div class="actions">
-      <%= f.submit "Submit", class: "btn btn-primary" %>
-    </div>
-    
-  <% end %>
 <p>Not a member yet? <%= link_to "Sign Up Here.", new_user_path %></p>

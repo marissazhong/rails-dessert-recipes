@@ -1,5 +1,7 @@
 <h1>Please Sign Up:</h1>
 
-<%= render 'form' %>
+<%= form_for @user do |f| %>
+    <%= render 'form' %>
+<% end %>
 
 <p>Already a member? <%= link_to "Login here.", signin_path %></p>

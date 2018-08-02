@@ -1,5 +1,7 @@
 <h1>Please Edit Your Credentials:</h1>
 
-<%= render 'form' %>
+<%= form_for @user do |f| %>
+    <%= render 'form' %>
+<% end %>
 
 <%= link_to 'Back to Your Home Page', user_path(@user) %>
