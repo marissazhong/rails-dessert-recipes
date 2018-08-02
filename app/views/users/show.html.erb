@@ -1,4 +1,9 @@
 <h3>Welcome back, <%=@user.username%>!</h3><br>
+
+<h3>Today&#39;s Featured Recipes:</h3>
+
+<%= render partial: 'recipes/index_all', locals: {all_recipes: @recipes} %>  
+
 <h3>Your Recipes:</h3>
 
-<% render 'recipes/index' %>
+<%= render partial: 'recipes/index_user', locals: {all_user_recipes: @user_recipes} %>  

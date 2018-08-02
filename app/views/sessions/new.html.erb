@@ -3,7 +3,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
-  <%= render 'users/form' %>  
+  <%= render partial: 'users/form', locals: {f: f} %>  
 <% end %>
 
 <p>Not a member yet? <%= link_to "Sign Up Here.", new_user_path %></p>
