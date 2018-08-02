@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
+    before_action :all_recipes, only: [:show]
 
     def new
         @user = User.new
@@ -36,6 +37,10 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
     
+    def all_recipes
+        @recipes = Recipe.all
+    end
+
     def user_params
         params.require(:user).permit(:username, :email, :password)
     end 
