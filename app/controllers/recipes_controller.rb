@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
     # /recipes index page showing user's recipes and all recipes
     def index
         @recipes = Recipe.all
-        @user_recipes = Recipe.where(user_id: current_user.id).all
+        @user_recipes = Recipe.where(user_id: @user.id).all
         render :'users/show'
     end
 
@@ -14,23 +14,23 @@ class RecipesController < ApplicationController
 
     def new
         @recipe = Recipe.new
-        @recipe.recipe_ingredients.build(input_name: 'flour', quantity: '2 cups')
+        @recipe.ingredients_recipe.build(input_name: 'flour', quantity: '2 cups')
     end
 
     def create
-        @recipe = @user.recipes.build(recipe_params(:name, :prep_time, :cook_time, recipe_ingredients_attributes: [:input_name, :quantity]))
+        @recipe = @user.recipes.build(recipe_params(:name, :prep_time, :cook_time))
         @recipe.directions = params[:recipe][:directions].values
         
         # find or create ingredient by name
-
-        # params[:recipe][:recipe_ingredients_attributes].each do |k,v|
-        #     # ingredient = Ingredient.find_by(name: v["input_name"].downcase)
-        #     # if !ingredient
-        #     #     RecipeIngredient.create(input_name: v["input_name"], quantity: v["quantity"])
-        #     #     ingredient = @recipe.ingredients.create(name: v["input_name"].downcase)
-        #     # end
-        #     @recipe.ingredients << Ingredient.create(name: "hello")
-        # end
+        params[:recipe][:ingredients_recipe_attributes].each do |k,v|
+            ingredient = Ingredient.find_or_create_by(name: v["input_name"].downcase)
+            # if !ingredient
+            #     RecipeIngredient.create(input_name: v["input_name"], quantity: v["quantity"])
+            #     ingredient = @recipe.ingredients.create(name: v["input_name"].downcase)
+            # end
+            @recipe.ingredients_recipes.build(ingredient_id: ingredient.id, recipe_id: @recipe.id, input_name: v["input_name"], quantity: v["quantity"])
+            #@recipe.ingredients << ingredient
+        end
 
         if @recipe.save
             redirect_to recipe_path(@recipe)

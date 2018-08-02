@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to user_path(@user), notice: "Welcome to Sweet Tooth Recipes!"
+            redirect_to user_path(@user)
         else
             render :new, layout: false
         end
