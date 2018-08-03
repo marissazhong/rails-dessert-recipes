@@ -2,7 +2,9 @@
 
 <%= form_for(@pantry) do |f| %>
     <div class="form-group">
-        <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :titleize %>
+        <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :titleize do |b| %>
+            <%= b.label { b.check_box(checked: false) } + b.text %>
+        <% end %>
     </div><br>
 
     <div class="actions">

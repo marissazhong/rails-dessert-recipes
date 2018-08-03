@@ -19,6 +19,12 @@ class PantriesController < ApplicationController
         redirect_to pantry_path(@pantry)
     end
 
+    def destroy
+        @ingredient = Ingredient.find(params[:ingredient_id])
+        @pantry.ingredients.delete(@ingredient)
+        redirect_to pantry_path(@pantry)
+    end
+
     private
 
     def set_pantry
