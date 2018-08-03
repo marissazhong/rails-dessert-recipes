@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 #gem 'devise'
 gem 'thin'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2', '~> 0.2.1'
 gem 'dotenv-rails'
 gem 'pry'
 # bootstrap

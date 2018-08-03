@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180803120504) do
+ActiveRecord::Schema.define(version: 20180803150321) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
@@ -40,10 +40,9 @@ ActiveRecord::Schema.define(version: 20180803120504) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
-    t.integer "fb_uid"
-    t.string "fb_name"
-    t.string "fb_email"
-    t.string "fb_image"
+    t.string "name"
+    t.string "image_url"
+    t.integer "uid", limit: 8
   end
 
 end
