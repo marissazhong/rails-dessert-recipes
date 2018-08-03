@@ -19,8 +19,7 @@ class RecipesController < ApplicationController
 
     def create
         @recipe = @user.recipes.build(recipe_params)
-        @recipe.directions = params[:recipe][:directions].values
-
+        @recipe.directions = params[:recipe][:directions].values.delete_if {|v| v.empty?}
         if @recipe.save
             redirect_to recipe_path(@recipe)
         else
@@ -34,7 +33,7 @@ class RecipesController < ApplicationController
 
     def update
         @recipe.update(recipe_params)
-        @recipe.directions = params[:recipe][:directions].values
+        @recipe.directions = params[:recipe][:directions].values.delete_if {|v| v.empty?}
         if @recipe.save
             redirect_to recipe_path(@recipe)
         else
