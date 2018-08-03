@@ -16999,3 +16999,838 @@ Migrating to RenameUidInUsers (20180803120504)
             FROM sqlite_temp_master
             WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
 [0m
+Started GET "/" for 127.0.0.1 at 2018-08-03 08:12:30 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.9ms)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-08-03 08:12:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:12:35 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (3.3ms)
+  Rendered sessions/new.html.erb (7.7ms)
+Completed 200 OK in 29ms (Views: 10.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 08:12:37 -0400
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:22:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered sessions/new.html.erb (5.6ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 08:22:31 -0400
+Started GET "/" for 127.0.0.1 at 2018-08-03 08:25:22 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (1.0ms)
+Completed 200 OK in 13ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:25:23 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered sessions/new.html.erb (9.6ms)
+Completed 200 OK in 25ms (Views: 11.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 08:25:24 -0400
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:31:46 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (6.3ms)
+  Rendered sessions/new.html.erb (10.4ms)
+Completed 200 OK in 38ms (Views: 18.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:31:48 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb (3.7ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 08:31:49 -0400
+Started GET "/auth/facebook/callback?error=access_denied&error_code=200&error_description=Permissions%20error&error_reason=user_denied&state=92cd7f6e3830a05bea991ff03679dc193a7bbabdc238b94f" for 127.0.0.1 at 2018-08-03 08:31:55 -0400
+  
+OmniAuth::Strategies::Facebook::NoAuthorizationCodeError (must pass either a `code` (via URL or by an `fbsr_XXX` signed request cookie)):
+  
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:147:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:32:03 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.2ms)
+  Rendered sessions/new.html.erb (5.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:32:15 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb (3.5ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 08:32:17 -0400
+Started GET "/auth/facebook/callback?code=AQBbVRuIOFCXBqeLO7mDCbGwo_1Ee-xf3Rdn405Of0F6_-kRJ7JClLb-7ZVlb518qlhc0p_BaxoBGoKJILfLeVJs_EeIh0DL1jJR0uq4cgsvI5X6ErBqrKYbRQcpVR9APM2eZ3W9dF0pHI9CFH5LKnrvwlXiAXo64jl8FZZKCbC1dNNIGVYnM53x4PoPXHH5QXiZzEPPwHS0oUw0zZt0RjfoOpUxvZ6yiKCgtrwEkpV9Yu34_bowuc7nT8jjULyqqEblIPI_R_94l1IzsRkT-9fAaQZcHuIR0RBW6D_oxxsviak-PhmbNvUyxR143994XMlokF8H99cjpQNfGzLu5a5k&state=11f690e0ec6f4ae2cfa2a9ab7a7d2830b87ba377c0a1143d" for 127.0.0.1 at 2018-08-03 08:32:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBbVRuIOFCXBqeLO7mDCbGwo_1Ee-xf3Rdn405Of0F6_-kRJ7JClLb-7ZVlb518qlhc0p_BaxoBGoKJILfLeVJs_EeIh0DL1jJR0uq4cgsvI5X6ErBqrKYbRQcpVR9APM2eZ3W9dF0pHI9CFH5LKnrvwlXiAXo64jl8FZZKCbC1dNNIGVYnM53x4PoPXHH5QXiZzEPPwHS0oUw0zZt0RjfoOpUxvZ6yiKCgtrwEkpV9Yu34_bowuc7nT8jjULyqqEblIPI_R_94l1IzsRkT-9fAaQZcHuIR0RBW6D_oxxsviak-PhmbNvUyxR143994XMlokF8H99cjpQNfGzLu5a5k", "state"=>"11f690e0ec6f4ae2cfa2a9ab7a7d2830b87ba377c0a1143d"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:25:in `create'
+Started GET "/auth/facebook/callback?code=AQBbVRuIOFCXBqeLO7mDCbGwo_1Ee-xf3Rdn405Of0F6_-kRJ7JClLb-7ZVlb518qlhc0p_BaxoBGoKJILfLeVJs_EeIh0DL1jJR0uq4cgsvI5X6ErBqrKYbRQcpVR9APM2eZ3W9dF0pHI9CFH5LKnrvwlXiAXo64jl8FZZKCbC1dNNIGVYnM53x4PoPXHH5QXiZzEPPwHS0oUw0zZt0RjfoOpUxvZ6yiKCgtrwEkpV9Yu34_bowuc7nT8jjULyqqEblIPI_R_94l1IzsRkT-9fAaQZcHuIR0RBW6D_oxxsviak-PhmbNvUyxR143994XMlokF8H99cjpQNfGzLu5a5k&state=11f690e0ec6f4ae2cfa2a9ab7a7d2830b87ba377c0a1143d" for 127.0.0.1 at 2018-08-03 08:33:32 -0400
+  
+OAuth2::Error ({"message"=>"This authorization code has been used.", "type"=>"OAuthException", "code"=>100, "fbtrace_id"=>"BPVG5M9+ye3"}: 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100,"fbtrace_id":"BPVG5M9+ye3"}}):
+  
+oauth2 (1.4.0) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.4.0) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.4.0) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:110:in `build_access_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/auth/facebook/callback?code=AQC5XAH1TTyFl0qk6neEte4RwH0oMrpHPswt0KDao4ejmGwf1qwAfJafBdi3aSD84yBM1JNGmOgtbVhrNtrLEUEahpiIMVWlKEI5dAZXgYgBKmrW15y1P-zc99vsGzEORboYmt9VTt5gn8nose8NvQcBpuMxR5iEHErMZZzXO8dVZVIuQJV-HGev5aHbDqYgbMJEyutp1tfSH4EAC2j0YL7Cv55mgkOlDjNXw05tdMbK4HxW-8HRnbGoTqzIbBOpESZ3SPcUI18jqhGnPMsMLud_iK3mPht63zf_VV1_wQU_wHDBf7MO5KApy4qbUODmqXDBcZyLu1X5dv9Ynr_gCeK8&state=11f690e0ec6f4ae2cfa2a9ab7a7d2830b87ba377c0a1143d" for 127.0.0.1 at 2018-08-03 08:33:46 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQC5XAH1TTyFl0qk6neEte4RwH0oMrpHPswt0KDao4ejmGwf1qwAfJafBdi3aSD84yBM1JNGmOgtbVhrNtrLEUEahpiIMVWlKEI5dAZXgYgBKmrW15y1P-zc99vsGzEORboYmt9VTt5gn8nose8NvQcBpuMxR5iEHErMZZzXO8dVZVIuQJV-HGev5aHbDqYgbMJEyutp1tfSH4EAC2j0YL7Cv55mgkOlDjNXw05tdMbK4HxW-8HRnbGoTqzIbBOpESZ3SPcUI18jqhGnPMsMLud_iK3mPht63zf_VV1_wQU_wHDBf7MO5KApy4qbUODmqXDBcZyLu1X5dv9Ynr_gCeK8", "state"=>"11f690e0ec6f4ae2cfa2a9ab7a7d2830b87ba377c0a1143d"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "4395504565585"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.uid: SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:17:in `create'
+Started GET "/auth/facebook/callback?code=AQDXp6MJDi0lnwU6Wz_dNcaIjz3K0GXwXeCH74vuYHYQTTf9nR77WJw7-5v7hdx8BAZPdCUzgGhzt69Fxh2bfJ8jJL1IhCXLe1Ztn3NTS7rTwiuKB5m_gRFnJvi2gz0dlerYO0wBJ-QZxxOfaOdfeGQsDNq2FZjsUCjGcjy7UnlAnLSM4kOHpYZIJnqgrmLNBi4DA-2jlhk15rvQJFyMVnTBQKLKwnG9yHLXn1B15bLq_HpRGKzIbZD7lW0Ile3BY6rgaewqBDttXpwQ153GVQkCrM2zDyYHY_pPALhtj8HCRnBwC5bGh__tW5YERXHZz_KRx2FopueyL2VeCU6PSWrP&state=11f690e0ec6f4ae2cfa2a9ab7a7d2830b87ba377c0a1143d" for 127.0.0.1 at 2018-08-03 08:33:47 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDXp6MJDi0lnwU6Wz_dNcaIjz3K0GXwXeCH74vuYHYQTTf9nR77WJw7-5v7hdx8BAZPdCUzgGhzt69Fxh2bfJ8jJL1IhCXLe1Ztn3NTS7rTwiuKB5m_gRFnJvi2gz0dlerYO0wBJ-QZxxOfaOdfeGQsDNq2FZjsUCjGcjy7UnlAnLSM4kOHpYZIJnqgrmLNBi4DA-2jlhk15rvQJFyMVnTBQKLKwnG9yHLXn1B15bLq_HpRGKzIbZD7lW0Ile3BY6rgaewqBDttXpwQ153GVQkCrM2zDyYHY_pPALhtj8HCRnBwC5bGh__tW5YERXHZz_KRx2FopueyL2VeCU6PSWrP", "state"=>"11f690e0ec6f4ae2cfa2a9ab7a7d2830b87ba377c0a1143d"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "4395504565585"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.uid: SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:17:in `create'
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:33:49 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered sessions/new.html.erb (4.2ms)
+Completed 200 OK in 13ms (Views: 6.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 08:33:51 -0400
+Started GET "/auth/facebook/callback?code=AQAQgSo_i8rNgZ2ZJPi16dW7kid-fkJ2i9weakh3iKvWktiv4k9UtE_GIs4lYR05tVbOSc06mpI-3OdBQse_0kRL4R7Uo3DfYFamh1QPINJSrGII2eW2sZi1MmRIg2ZvT94HEFynRu5CEWyzMnPLhvkiJolUgEaDhxXNGeOEflfomyGDIGAXK-rO8cVt3L__UOH-Xo9SzqHL8sTjPt-h4rlZSXBESiAHbqTq9mdiKLYmr7s1XrXA2vBcesztOjSN_UvHef2e23_8ns8bIA0gCHhGVWyuIPHTOdqiEdcn1hyunbN7JAncCMtJq3FsZxk3ACznCFB6AmKbMn4T7Bhyd9Ic&state=7e5eb1cd06ac082cdfe3354edc42245126253616e5b4127e" for 127.0.0.1 at 2018-08-03 08:33:51 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAQgSo_i8rNgZ2ZJPi16dW7kid-fkJ2i9weakh3iKvWktiv4k9UtE_GIs4lYR05tVbOSc06mpI-3OdBQse_0kRL4R7Uo3DfYFamh1QPINJSrGII2eW2sZi1MmRIg2ZvT94HEFynRu5CEWyzMnPLhvkiJolUgEaDhxXNGeOEflfomyGDIGAXK-rO8cVt3L__UOH-Xo9SzqHL8sTjPt-h4rlZSXBESiAHbqTq9mdiKLYmr7s1XrXA2vBcesztOjSN_UvHef2e23_8ns8bIA0gCHhGVWyuIPHTOdqiEdcn1hyunbN7JAncCMtJq3FsZxk3ACznCFB6AmKbMn4T7Bhyd9Ic", "state"=>"7e5eb1cd06ac082cdfe3354edc42245126253616e5b4127e"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "4395504565585"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.uid: SELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?):
+  
+app/controllers/sessions_controller.rb:17:in `create'
+Started GET "/auth/facebook/callback?code=AQAQgSo_i8rNgZ2ZJPi16dW7kid-fkJ2i9weakh3iKvWktiv4k9UtE_GIs4lYR05tVbOSc06mpI-3OdBQse_0kRL4R7Uo3DfYFamh1QPINJSrGII2eW2sZi1MmRIg2ZvT94HEFynRu5CEWyzMnPLhvkiJolUgEaDhxXNGeOEflfomyGDIGAXK-rO8cVt3L__UOH-Xo9SzqHL8sTjPt-h4rlZSXBESiAHbqTq9mdiKLYmr7s1XrXA2vBcesztOjSN_UvHef2e23_8ns8bIA0gCHhGVWyuIPHTOdqiEdcn1hyunbN7JAncCMtJq3FsZxk3ACznCFB6AmKbMn4T7Bhyd9Ic&state=7e5eb1cd06ac082cdfe3354edc42245126253616e5b4127e" for 127.0.0.1 at 2018-08-03 08:34:34 -0400
+  
+OAuth2::Error ({"message"=>"This authorization code has been used.", "type"=>"OAuthException", "code"=>100, "fbtrace_id"=>"B86msBVP18O"}: 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100,"fbtrace_id":"B86msBVP18O"}}):
+  
+oauth2 (1.4.0) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.4.0) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.4.0) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:110:in `build_access_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/auth/facebook/callback?code=AQAQgSo_i8rNgZ2ZJPi16dW7kid-fkJ2i9weakh3iKvWktiv4k9UtE_GIs4lYR05tVbOSc06mpI-3OdBQse_0kRL4R7Uo3DfYFamh1QPINJSrGII2eW2sZi1MmRIg2ZvT94HEFynRu5CEWyzMnPLhvkiJolUgEaDhxXNGeOEflfomyGDIGAXK-rO8cVt3L__UOH-Xo9SzqHL8sTjPt-h4rlZSXBESiAHbqTq9mdiKLYmr7s1XrXA2vBcesztOjSN_UvHef2e23_8ns8bIA0gCHhGVWyuIPHTOdqiEdcn1hyunbN7JAncCMtJq3FsZxk3ACznCFB6AmKbMn4T7Bhyd9Ic&state=7e5eb1cd06ac082cdfe3354edc42245126253616e5b4127e" for 127.0.0.1 at 2018-08-03 08:35:48 -0400
+  
+OAuth2::Error ({"message"=>"This authorization code has been used.", "type"=>"OAuthException", "code"=>100, "fbtrace_id"=>"Hx7mZ4m1Zq+"}: 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100,"fbtrace_id":"Hx7mZ4m1Zq+"}}):
+  
+oauth2 (1.4.0) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.4.0) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.4.0) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:110:in `build_access_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:35:51 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered sessions/new.html.erb (4.2ms)
+Completed 200 OK in 17ms (Views: 6.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:35:52 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered sessions/new.html.erb (3.4ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:36:09 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb (3.5ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 08:36:10 -0400
+Started GET "/auth/facebook/callback?code=AQBHJk02-6LXBIJ0q8AxykhTdcRG8VgKuChW4-igE8knf79k1aQwcexzLbY5U5JXvZnth_Zty-nECKtVcqv34G6pgT8iLxoVcZun_w_QS_tvMq93f_iX732qehMIAe_zwQrDO4pcI7UEwZJboboMJVZgnaQ3KntJDJDRqcexQqElBwbTbARb_VnkaacJTrUKEPfe1u1TClDQ8pq2evggmmTZZTlZrYrf_0ddBo7lqBVW1P60OPMHoOnxrPdS5W93-GYBOx-TGt9bK9Evjf-shqtXwNRWhmFAMJqrO6ajuWWfhyWt2BVKvtyC26WOPJEujz3Wy6AeLw7Cc7upys9yZsD1&state=002b22d1ff55099136bbddd71cc6cbcd3027f7f31c692149" for 127.0.0.1 at 2018-08-03 08:36:16 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBHJk02-6LXBIJ0q8AxykhTdcRG8VgKuChW4-igE8knf79k1aQwcexzLbY5U5JXvZnth_Zty-nECKtVcqv34G6pgT8iLxoVcZun_w_QS_tvMq93f_iX732qehMIAe_zwQrDO4pcI7UEwZJboboMJVZgnaQ3KntJDJDRqcexQqElBwbTbARb_VnkaacJTrUKEPfe1u1TClDQ8pq2evggmmTZZTlZrYrf_0ddBo7lqBVW1P60OPMHoOnxrPdS5W93-GYBOx-TGt9bK9Evjf-shqtXwNRWhmFAMJqrO6ajuWWfhyWt2BVKvtyC26WOPJEujz3Wy6AeLw7Cc7upys9yZsD1", "state"=>"002b22d1ff55099136bbddd71cc6cbcd3027f7f31c692149"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:25:in `create'
+Started GET "/auth/facebook/callback?code=AQBHJk02-6LXBIJ0q8AxykhTdcRG8VgKuChW4-igE8knf79k1aQwcexzLbY5U5JXvZnth_Zty-nECKtVcqv34G6pgT8iLxoVcZun_w_QS_tvMq93f_iX732qehMIAe_zwQrDO4pcI7UEwZJboboMJVZgnaQ3KntJDJDRqcexQqElBwbTbARb_VnkaacJTrUKEPfe1u1TClDQ8pq2evggmmTZZTlZrYrf_0ddBo7lqBVW1P60OPMHoOnxrPdS5W93-GYBOx-TGt9bK9Evjf-shqtXwNRWhmFAMJqrO6ajuWWfhyWt2BVKvtyC26WOPJEujz3Wy6AeLw7Cc7upys9yZsD1&state=002b22d1ff55099136bbddd71cc6cbcd3027f7f31c692149" for 127.0.0.1 at 2018-08-03 08:37:44 -0400
+  
+OAuth2::Error ({"message"=>"This authorization code has been used.", "type"=>"OAuthException", "code"=>100, "fbtrace_id"=>"BYPx24yaPvz"}: 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100,"fbtrace_id":"BYPx24yaPvz"}}):
+  
+oauth2 (1.4.0) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.4.0) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.4.0) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:110:in `build_access_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:52:32 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (5.7ms)
+  Rendered sessions/new.html.erb (9.6ms)
+Completed 200 OK in 34ms (Views: 13.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:52:35 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered sessions/new.html.erb (3.6ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 08:52:41 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb (3.9ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 08:52:43 -0400
+Started GET "/auth/facebook/callback?code=AQDZ8E-4bdeKcVUOL2tvwnE4B0p02Rhg-ESHAUuJJZ7U6g9iiFWuQtif8mi4tblNgxbxkbW8iGhT-RysA_BJ_wUp6mwzJZ9sXGDoJBHBLhh3cGplja42Ol0SkIrEghUiMVUMWWuxAt-bks0BkEWQCuIW047sr2-T61anSuQb9reIA7Bd4ulV-zNAmVO99HNf4elNf-LUAfFBl0fBN7MoJefbjO2AezGD0r-uM75pgXbV9t_7RSjKEDBdVz1iMbZbYVLyzsTot6hI4zTsuS38RWs0HWnSmrIj8DoYUThn-EcQ22D_hdf0JQPPzzzjzy-AnikOpVKQl-KPmY6TOKTAiSoQ&state=7543db60cff2201fa05d37a1f13c47cbab9a8316b8ed9035" for 127.0.0.1 at 2018-08-03 08:52:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDZ8E-4bdeKcVUOL2tvwnE4B0p02Rhg-ESHAUuJJZ7U6g9iiFWuQtif8mi4tblNgxbxkbW8iGhT-RysA_BJ_wUp6mwzJZ9sXGDoJBHBLhh3cGplja42Ol0SkIrEghUiMVUMWWuxAt-bks0BkEWQCuIW047sr2-T61anSuQb9reIA7Bd4ulV-zNAmVO99HNf4elNf-LUAfFBl0fBN7MoJefbjO2AezGD0r-uM75pgXbV9t_7RSjKEDBdVz1iMbZbYVLyzsTot6hI4zTsuS38RWs0HWnSmrIj8DoYUThn-EcQ22D_hdf0JQPPzzzjzy-AnikOpVKQl-KPmY6TOKTAiSoQ", "state"=>"7543db60cff2201fa05d37a1f13c47cbab9a8316b8ed9035"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:18:in `create'
+Started GET "/auth/facebook/callback?code=AQDZ8E-4bdeKcVUOL2tvwnE4B0p02Rhg-ESHAUuJJZ7U6g9iiFWuQtif8mi4tblNgxbxkbW8iGhT-RysA_BJ_wUp6mwzJZ9sXGDoJBHBLhh3cGplja42Ol0SkIrEghUiMVUMWWuxAt-bks0BkEWQCuIW047sr2-T61anSuQb9reIA7Bd4ulV-zNAmVO99HNf4elNf-LUAfFBl0fBN7MoJefbjO2AezGD0r-uM75pgXbV9t_7RSjKEDBdVz1iMbZbYVLyzsTot6hI4zTsuS38RWs0HWnSmrIj8DoYUThn-EcQ22D_hdf0JQPPzzzjzy-AnikOpVKQl-KPmY6TOKTAiSoQ&state=7543db60cff2201fa05d37a1f13c47cbab9a8316b8ed9035" for 127.0.0.1 at 2018-08-03 08:53:56 -0400
+  
+OAuth2::Error ({"message"=>"This authorization code has been used.", "type"=>"OAuthException", "code"=>100, "fbtrace_id"=>"E+ZAqpiXhqx"}: 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100,"fbtrace_id":"E+ZAqpiXhqx"}}):
+  
+oauth2 (1.4.0) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.4.0) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.4.0) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:110:in `build_access_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/auth/facebook/callback?code=AQDZ8E-4bdeKcVUOL2tvwnE4B0p02Rhg-ESHAUuJJZ7U6g9iiFWuQtif8mi4tblNgxbxkbW8iGhT-RysA_BJ_wUp6mwzJZ9sXGDoJBHBLhh3cGplja42Ol0SkIrEghUiMVUMWWuxAt-bks0BkEWQCuIW047sr2-T61anSuQb9reIA7Bd4ulV-zNAmVO99HNf4elNf-LUAfFBl0fBN7MoJefbjO2AezGD0r-uM75pgXbV9t_7RSjKEDBdVz1iMbZbYVLyzsTot6hI4zTsuS38RWs0HWnSmrIj8DoYUThn-EcQ22D_hdf0JQPPzzzjzy-AnikOpVKQl-KPmY6TOKTAiSoQ&state=7543db60cff2201fa05d37a1f13c47cbab9a8316b8ed9035" for 127.0.0.1 at 2018-08-03 08:54:10 -0400
+  
+OAuth2::Error ({"message"=>"This authorization code has been used.", "type"=>"OAuthException", "code"=>100, "fbtrace_id"=>"Bqi2GdF6qu8"}: 
+{"error":{"message":"This authorization code has been used.","type":"OAuthException","code":100,"fbtrace_id":"Bqi2GdF6qu8"}}):
+  
+oauth2 (1.4.0) lib/oauth2/client.rb:119:in `request'
+oauth2 (1.4.0) lib/oauth2/client.rb:146:in `get_token'
+oauth2 (1.4.0) lib/oauth2/strategy/auth_code.rb:30:in `get_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:89:in `build_access_token'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:110:in `build_access_token'
+omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:73:in `callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 09:02:34 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (5.7ms)
+  Rendered sessions/new.html.erb (9.9ms)
+Completed 200 OK in 35ms (Views: 14.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-03 09:02:34 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 09:02:36 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered sessions/new.html.erb (4.1ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 09:02:37 -0400
+Started GET "/auth/facebook/callback?code=AQBJTmysizfr5s1H_ppkt-DJYKbnGBrjC4fvxn163AOQfHmAIXVD-ECC3UM_8YljW198wfjFQqf7A759W-waPccgidr2SmdmVLJaHIySpgwTHgwmpOY5C1klp1nY0GXooytqsk6tVOtf1-Dz15TDF9fO4Ka8Pgrq4x1p7HKYEVcT_Kz_SbzpaU2CtykeQni-rv_sypWfVK6fr_Zpu2E3MmAXI4PuNEwwhbYm-yeJNqQ-HC9ce6LnFbuPyrQOU9PfntVX_VmjEAEdhcPQ9uA4JEYJqi36ZCttU82kw0MA2tESRhGVzJKCiK7dXSlehL_5VBAJjIxPsjcxUQr2he2FbpVA&state=3f4eb168efb5e4bf70042845e96ae8c1047adb8f32ab6f40" for 127.0.0.1 at 2018-08-03 09:02:37 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBJTmysizfr5s1H_ppkt-DJYKbnGBrjC4fvxn163AOQfHmAIXVD-ECC3UM_8YljW198wfjFQqf7A759W-waPccgidr2SmdmVLJaHIySpgwTHgwmpOY5C1klp1nY0GXooytqsk6tVOtf1-Dz15TDF9fO4Ka8Pgrq4x1p7HKYEVcT_Kz_SbzpaU2CtykeQni-rv_sypWfVK6fr_Zpu2E3MmAXI4PuNEwwhbYm-yeJNqQ-HC9ce6LnFbuPyrQOU9PfntVX_VmjEAEdhcPQ9uA4JEYJqi36ZCttU82kw0MA2tESRhGVzJKCiK7dXSlehL_5VBAJjIxPsjcxUQr2he2FbpVA", "state"=>"3f4eb168efb5e4bf70042845e96ae8c1047adb8f32ab6f40"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:16:in `create'

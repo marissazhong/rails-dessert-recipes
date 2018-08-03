@@ -20,9 +20,11 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 #gem 'devise'
+gem 'thin'
 gem 'omniauth'
 gem 'omniauth-facebook'
-
+gem 'dotenv-rails'
+gem 'pry'
 # bootstrap
 gem 'bootstrap-sass', '3.3.7'
 
