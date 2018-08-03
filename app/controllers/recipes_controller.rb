@@ -18,14 +18,8 @@ class RecipesController < ApplicationController
     end
 
     def create
-        @recipe = @user.recipes.build(recipe_params(:name, :prep_time, :cook_time))
+        @recipe = @user.recipes.build(recipe_params
         @recipe.directions = params[:recipe][:directions].values
-        
-        # find or create ingredient by name
-        params[:recipe][:ingredients_recipes_attributes].each do |k,v|
-            ingredient = Ingredient.find_or_create_by(name: v["input_name"].downcase)
-            @recipe.ingredients_recipes.build(ingredient_id: ingredient.id, recipe_id: @recipe.id, input_name: v["input_name"], quantity: v["quantity"])
-        end
 
         if @recipe.save
             redirect_to recipe_path(@recipe)
@@ -39,7 +33,7 @@ class RecipesController < ApplicationController
     end
 
     def update
-        @recipe.update(recipe_params(:name, :prep_time, :cook_time))
+        @recipe.update(recipe_params)
         @recipe.directions = params[:recipe][:directions].values
         @recipe.save
         redirect_to recipe_path(@recipe)
@@ -55,8 +49,8 @@ class RecipesController < ApplicationController
             @user = current_user
         end
 
-        def recipe_params(*args)
-            params.require(:recipe).permit(*args)
+        def recipe_params
+            params.require(:recipe).permit(:name, :prep_time, :cook_time, ingredients_recipes_attributes: [:input_name, :quantity])
         end
 
 end

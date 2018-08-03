@@ -15628,3 +15628,126 @@ Processing by RecipesController#edit as HTML
 Completed 200 OK in 37ms (Views: 32.6ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/recipes/new" for 127.0.0.1 at 2018-08-02 21:32:27 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (14.3ms)
+  Rendered recipes/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 238ms (Views: 180.0ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2018-08-02 21:32:47 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lcxR9SeJCldHS4lVITJD3cS9GlAakkzm3epKGUjXY6qX2pNKi8a4QOa4csZmIbYQ3HEjE0kjaZvqJbKDejqEXA==", "recipe"=>{"name"=>"New Recipe Test", "prep_time"=>"30", "cook_time"=>"30", "ingredients_recipes_attributes"=>{"0"=>{"input_name"=>"flour", "quantity"=>"2 cups"}, "1"=>{"input_name"=>"milk", "quantity"=>"1 cup"}}, "directions"=>{"0"=>"mix", "1"=>"bake", "2"=>"cool"}}, "commit"=>"Create Recipe"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/recipes_controller.rb:21:in `[]'
+app/controllers/recipes_controller.rb:21:in `create'
+Started POST "/recipes" for 127.0.0.1 at 2018-08-02 21:33:15 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lcxR9SeJCldHS4lVITJD3cS9GlAakkzm3epKGUjXY6qX2pNKi8a4QOa4csZmIbYQ3HEjE0kjaZvqJbKDejqEXA==", "recipe"=>{"name"=>"New Recipe Test", "prep_time"=>"30", "cook_time"=>"30", "ingredients_recipes_attributes"=>{"0"=>{"input_name"=>"flour", "quantity"=>"2 cups"}, "1"=>{"input_name"=>"milk", "quantity"=>"1 cup"}}, "directions"=>{"0"=>"mix", "1"=>"bake", "2"=>"cool"}}, "commit"=>"Create Recipe"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :directions
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "flour"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `ingredients_recipes' for nil:NilClass):
+  
+app/models/recipe.rb:11:in `block in ingredients_recipes_attributes='
+app/models/recipe.rb:9:in `each'
+app/models/recipe.rb:9:in `ingredients_recipes_attributes='
+app/controllers/recipes_controller.rb:21:in `create'
+Started POST "/recipes" for 127.0.0.1 at 2018-08-02 21:33:28 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lcxR9SeJCldHS4lVITJD3cS9GlAakkzm3epKGUjXY6qX2pNKi8a4QOa4csZmIbYQ3HEjE0kjaZvqJbKDejqEXA==", "recipe"=>{"name"=>"New Recipe Test", "prep_time"=>"30", "cook_time"=>"30", "ingredients_recipes_attributes"=>{"0"=>{"input_name"=>"flour", "quantity"=>"2 cups"}, "1"=>{"input_name"=>"milk", "quantity"=>"1 cup"}}, "directions"=>{"0"=>"mix", "1"=>"bake", "2"=>"cool"}}, "commit"=>"Create Recipe"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :directions
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "flour"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `ingredients_recipes' for nil:NilClass):
+  
+app/models/recipe.rb:11:in `block in ingredients_recipes_attributes='
+app/models/recipe.rb:9:in `each'
+app/models/recipe.rb:9:in `ingredients_recipes_attributes='
+app/controllers/recipes_controller.rb:21:in `create'
+Started POST "/recipes" for 127.0.0.1 at 2018-08-02 21:34:16 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lcxR9SeJCldHS4lVITJD3cS9GlAakkzm3epKGUjXY6qX2pNKi8a4QOa4csZmIbYQ3HEjE0kjaZvqJbKDejqEXA==", "recipe"=>{"name"=>"New Recipe Test", "prep_time"=>"30", "cook_time"=>"30", "ingredients_recipes_attributes"=>{"0"=>{"input_name"=>"flour", "quantity"=>"2 cups"}, "1"=>{"input_name"=>"milk", "quantity"=>"1 cup"}}, "directions"=>{"0"=>"mix", "1"=>"bake", "2"=>"cool"}}, "commit"=>"Create Recipe"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :directions
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "flour"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "milk"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "created_at", "updated_at", "prep_time", "cook_time", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "New Recipe Test"], ["directions", "[\"mix\", \"bake\", \"cool\"]"], ["created_at", "2018-08-03 01:34:16.609404"], ["updated_at", "2018-08-03 01:34:16.609404"], ["prep_time", 30], ["cook_time", 30], ["user_id", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 1], ["recipe_id", 4], ["input_name", "flour"], ["quantity", "2 cups"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 11], ["recipe_id", 4], ["input_name", "milk"], ["quantity", "1 cup"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/4
+Completed 302 Found in 62ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/recipes/4" for 127.0.0.1 at 2018-08-02 21:34:16 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 4]]
+  Rendered recipes/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/recipes/4/edit" for 127.0.0.1 at 2018-08-02 21:34:21 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recipes/edit.html.erb within layouts/application
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 4]]
+  Rendered recipes/_form.html.erb (4.5ms)
+  Rendered recipes/edit.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/recipes/4" for 127.0.0.1 at 2018-08-02 21:34:24 -0400
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ig9FW/5YbBSnKn1tHpUpgc1EgtNdNRnMVF5748w6C1mIGYfkUhfeAwbZhv5ZhtxM1Yi7kA6EPLFjkYN5/tfsrw==", "recipe"=>{"name"=>"New Recipe Test", "prep_time"=>"20", "cook_time"=>"30", "ingredients_recipes_attributes"=>{"0"=>{"input_name"=>"flour", "quantity"=>"2 cups", "id"=>""}, "1"=>{"input_name"=>"milk", "quantity"=>"1 cup", "id"=>""}}, "directions"=>{"0"=>""}}, "commit"=>"Update Recipe", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Unpermitted parameters: :ingredients_recipes_attributes, :directions
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "recipes" SET "prep_time" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["prep_time", 20], ["updated_at", "2018-08-03 01:34:24.318938"], ["id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "recipes" SET "directions" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["directions", "[\"\"]"], ["updated_at", "2018-08-03 01:34:24.322076"], ["id", 4]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/4
+Completed 302 Found in 13ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/recipes/4" for 127.0.0.1 at 2018-08-02 21:34:24 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 4]]
+  Rendered recipes/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 22ms (Views: 17.7ms | ActiveRecord: 0.4ms)
+
+
