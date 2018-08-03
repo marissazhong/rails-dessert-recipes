@@ -8,6 +8,9 @@ class Recipe < ActiveRecord::Base
     validates :cook_time, presence: true, numericality: true
 
     def ingredients_recipes_attributes=(ingredients_recipes_attributes)
+        if self.ingredients_recipes
+            IngredientsRecipe.where(recipe_id: self.id).delete_all
+        end
         ingredients_recipes_attributes.values.each do |v|
             if !v["input_name"].empty? && !v["quantity"].empty?
                 ingredient = Ingredient.find_or_create_by(name: v["input_name"].downcase)
