@@ -35,8 +35,11 @@ class RecipesController < ApplicationController
     def update
         @recipe.update(recipe_params)
         @recipe.directions = params[:recipe][:directions].values
-        @recipe.save
-        redirect_to recipe_path(@recipe)
+        if @recipe.save
+            redirect_to recipe_path(@recipe)
+        else
+            render :edit
+        end
     end
 
     def destroy
