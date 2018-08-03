@@ -1,8 +1,8 @@
 class RecipesController < ApplicationController
-    before_action :set_recipe, only: [:show, :edit]
+    before_action :set_recipe, only: [:show, :edit, :update, :destroy]
     before_action :set_user
     before_action :require_logged_in
-    
+
     # /recipes index page showing user's recipes and all recipes
     def index
         @recipes = Recipe.all
@@ -24,10 +24,6 @@ class RecipesController < ApplicationController
         # find or create ingredient by name
         params[:recipe][:ingredients_recipes_attributes].each do |k,v|
             ingredient = Ingredient.find_or_create_by(name: v["input_name"].downcase)
-            # if !ingredient
-            #     RecipeIngredient.create(input_name: v["input_name"], quantity: v["quantity"])
-            #     ingredient = @recipe.ingredients.create(name: v["input_name"].downcase)
-            # end
             @recipe.ingredients_recipes.build(ingredient_id: ingredient.id, recipe_id: @recipe.id, input_name: v["input_name"], quantity: v["quantity"])
         end
 
@@ -40,6 +36,13 @@ class RecipesController < ApplicationController
     end
 
     def edit
+    end
+
+    def update
+        @recipe.update(recipe_params(:name, :prep_time, :cook_time))
+        @recipe.directions = params[:recipe][:directions].values
+        @recipe.save
+        redirect_to recipe_path(@recipe)
     end
 
     private
