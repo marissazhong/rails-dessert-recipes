@@ -4,6 +4,8 @@ class Recipe < ActiveRecord::Base
     belongs_to :user
     accepts_nested_attributes_for :ingredients_recipes
     validates :name, presence: true
+    validates :prep_time, presence: true
+    validates :cook_time, presence: true
 
     def ingredients_recipes_attributes=(ingredients_recipes_attributes)
         ingredients_recipes_attributes.values.each do |v|
