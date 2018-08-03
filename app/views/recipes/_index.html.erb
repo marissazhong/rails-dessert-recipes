@@ -1,5 +1,5 @@
 
-<% if all_recipes %>
+<% if all_recipes != [] %>
     <% all_recipes.each do |recipe| %>
         <%= link_to recipe.name, recipe_path(recipe) %><br>
     <% end %>

@@ -1,8 +1,8 @@
 <h1><%=@recipe.name%></h1>
 
-<% if @recipe.user = @user %>
+<% if @recipe.user_id == @user.id %>
     <div class="actions">
-        <%= button_to "Edit Recipe", edit_recipe_path(@recipe), :method=>:get %>
+        <%= button_to "Edit Recipe", edit_recipe_path(@recipe), :method=>:get %><br />
         <%= button_to "Delete Recipe", recipe_path(@recipe), :method=>:delete, data: {confirm: "Are you sure?"} %>
     </div>
 <% else %>
