@@ -3,6 +3,7 @@
 <% if @recipe.user = @user %>
     <div class="actions">
         <%= button_to "Edit Recipe", edit_recipe_path(@recipe), :method=>:get %>
+        <%= button_to "Delete Recipe", recipe_path(@recipe), :method=>:delete, data: {confirm: "Are you sure?"} %>
     </div>
 <% else %>
     <h2>Author: <%=@recipe.user.username%></h2>

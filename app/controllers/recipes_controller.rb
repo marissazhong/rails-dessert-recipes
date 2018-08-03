@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
     end
 
     def create
-        @recipe = @user.recipes.build(recipe_params
+        @recipe = @user.recipes.build(recipe_params)
         @recipe.directions = params[:recipe][:directions].values
 
         if @recipe.save
@@ -37,6 +37,11 @@ class RecipesController < ApplicationController
         @recipe.directions = params[:recipe][:directions].values
         @recipe.save
         redirect_to recipe_path(@recipe)
+    end
+
+    def destroy
+        @recipe.destroy
+        redirect_to user_path(@user)
     end
 
     private

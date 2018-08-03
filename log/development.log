@@ -15751,3 +15751,70 @@ Processing by RecipesController#show as HTML
 Completed 200 OK in 22ms (Views: 17.7ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/recipes/4" for 127.0.0.1 at 2018-08-02 21:41:48 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/marissazhong/rails-dessert-recipes/app/controllers/recipes_controller.rb:22: syntax error, unexpected tIVAR, expecting ')'
+        @recipe.directions = params[:recipe]...
+        ^~~~~~~):
+  
+app/controllers/recipes_controller.rb:22: syntax error, unexpected tIVAR, expecting ')'
+Started GET "/recipes/4" for 127.0.0.1 at 2018-08-02 21:42:06 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (234.2ms)
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `recipe' for #<#<Class:0x00007fec1855d528>:0x00007fec18ccea28>
+Did you mean?  @recipe):
+    3: <% if @recipe.user = @user %>
+    4:     <div class="actions">
+    5:         <%= button_to "Edit Recipe", edit_recipe_path(@recipe), :method=>:get %>
+    6:         <%= button_to "Delete Recipe", recipe, :method=>:delete, data: {confirm: "Are you sure?"} %>
+    7:     </div>
+    8: <% else %>
+    9:     <h2>Author: <%=@recipe.user.username%></h2>
+  
+app/views/recipes/show.html.erb:6:in `_app_views_recipes_show_html_erb__3938454020943200757_70325998646940'
+Started GET "/recipes/4" for 127.0.0.1 at 2018-08-02 21:43:07 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 4]]
+  Rendered recipes/show.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 180ms (Views: 176.6ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/recipes/4" for 127.0.0.1 at 2018-08-02 21:43:11 -0400
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PAw0tawJWVnsxweonaxINwehzCeayufiOzEECvnZMxs+GvYKAEbrTk00/Dvav736H231ZMl7wp8M/vyQyzTU7Q==", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 4]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 11ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-02 21:43:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.6ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (1.9ms)
+  Rendered users/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 0.7ms)
+
+
