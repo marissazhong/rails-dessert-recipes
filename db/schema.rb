@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180803115813) do
+ActiveRecord::Schema.define(version: 20180803120504) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
@@ -40,7 +40,10 @@ ActiveRecord::Schema.define(version: 20180803115813) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
-    t.integer "uid"
+    t.integer "fb_uid"
+    t.string "fb_name"
+    t.string "fb_email"
+    t.string "fb_image"
   end
 
 end
