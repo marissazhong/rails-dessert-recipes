@@ -7,6 +7,15 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  
+    def set_recipe
+      @recipe = Recipe.find(params[:id])
+    end
+
+    def set_user
+        @user = current_user
+    end
+
     def require_logged_in
       redirect_to root_path unless logged_in?
     end

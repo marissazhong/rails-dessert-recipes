@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # if params
+    # if params[:user] # Conventional Login
     #   @user = User.find_by(username: params[:user][:username])
     #   if @user && @user.authenticate(params[:user][:password])
     #     session[:user_id] = @user.id
@@ -20,12 +20,14 @@ class SessionsController < ApplicationController
     #   else
     #     redirect_to signin_path, notice: "Login failed. Please try again."
     #   end
+    # elsif auth['uid'] # Facebook Login
       @user = User.find_or_create_by(:uid => auth['uid']) do |u|
-        u.name = auth['info']['name']
+        u.username = auth['info']['name']
         u.image_url = auth['info']['image']
       end
       session[:user_id] = @user.try(:id)
       redirect_to user_path(@user)
+    # end
   end
 
   private

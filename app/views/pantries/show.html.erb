@@ -1,0 +1,14 @@
+<h3>Your Pantry:</h3><br>
+
+<% if @pantry %>
+    <p>Your pantry is currently empty.</p>
+<% else %>
+    <%= @pantry %>
+<% end %>
+
+<div class="actions">
+    <%= button_to "Edit Your Pantry", edit_pantry_path(@pantry), :method=>:get %><br />
+</div>
+
+<h4>Based on your pantry, you can make these recipes:</h4><br>
+
