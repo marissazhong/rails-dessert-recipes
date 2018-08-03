@@ -1,9 +1,11 @@
 <h3>Your Pantry:</h3><br>
 
-<% if @pantry %>
-    <p>Your pantry is currently empty.</p>
+<% if !@pantry.ingredients.empty? %>
+    <% @pantry.ingredients.each do |ingredient| %>
+        <p><%= ingredient.name.titleize %></p>
+    <% end %>
 <% else %>
-    <%= @pantry %>
+    <p>Your pantry is currently empty.</p>
 <% end %>
 
 <div class="actions">

@@ -9,6 +9,16 @@ class PantriesController < ApplicationController
     def edit
     end
 
+    def update
+        if params[:pantry][:ingredient_ids] != ""
+            params[:pantry][:ingredient_ids].each do |ingredient_id|
+                @pantry.ingredients << Ingredient.where(id: ingredient_id)
+            end
+            @pantry.save
+        end
+        redirect_to pantry_path(@pantry)
+    end
+
     private
 
     def set_pantry

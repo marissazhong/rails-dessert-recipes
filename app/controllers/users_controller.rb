@@ -13,7 +13,6 @@ class UsersController < ApplicationController
         if @user.save
             @pantry = Pantry.create(user_id: @user.id)
             @user.pantry = @pantry
-            @pantry.ingredients = []
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else

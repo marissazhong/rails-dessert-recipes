@@ -1,5 +1,11 @@
 <h3>Edit Your Pantry:</h3><br>
 
 <%= form_for(@pantry) do |f| %>
-    <% f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :titleize %>
+    <div class="form-group">
+        <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :titleize %>
+    </div><br>
+
+    <div class="actions">
+        <%= f.submit%>
+    </div>
 <% end %>

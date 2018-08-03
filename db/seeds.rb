@@ -7,6 +7,7 @@ ingredients_database.each do |ingredient|
 end
 
 User.create(username: "marissa", email: "marissa@gmail.com", password: "marissa123")
+Pantry.create(user_id: 1)
 
 recipe1 = {name: "Vanilla Cupcakes", prep_time: 20, cook_time: 14, ingredients_recipes_attributes: {
     "0": {input_name: "flour", quantity: "1-1/4 cups"}, 
