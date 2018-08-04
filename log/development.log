@@ -39591,3 +39591,383 @@ Processing by PantriesController#show as HTML
 Completed 200 OK in 84ms (Views: 15.6ms | ActiveRecord: 6.8ms)
 
 
+Started GET "/pantries/1" for 127.0.0.1 at 2018-08-03 20:38:46 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 20], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 1]]
+  Rendered pantries/show.html.erb within layouts/application (6.5ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 296ms (Views: 164.3ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2018-08-03 20:38:49 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered users/edit.html.erb within layouts/application (8.8ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 19.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2018-08-03 20:39:31 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered users/edit.html.erb within layouts/application (3.3ms)
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2018-08-03 20:39:46 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/edit.html.erb within layouts/application (3.6ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 20:39:48 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.6ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (2.4ms)
+  Rendered users/show.html.erb within layouts/application (8.9ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pantries/1" for 127.0.0.1 at 2018-08-03 20:40:01 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 20], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 1]]
+  Rendered pantries/show.html.erb within layouts/application (5.4ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 14.7ms | ActiveRecord: 5.9ms)
+
+
+Started DELETE "/pantries/1?ingredient_id=1" for 127.0.0.1 at 2018-08-03 20:40:07 -0400
+Processing by PantriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HNYH812w+5S5xxsroQ1si2fYRsf0dMXBqZOmZYTWffUmosBrKFmR6X8BnWjfZn0KI4PugqhnmP6MZkIW7PnkWQ==", "ingredient_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "ingredients_pantries" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients_pantries"."ingredient_id" = 1[0m  [["pantry_id", 1]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/pantries/1
+Completed 302 Found in 11ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/pantries/1" for 127.0.0.1 at 2018-08-03 20:40:07 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 20], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 1]]
+  Rendered pantries/show.html.erb within layouts/application (5.6ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 14.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/pantries/1/edit" for 127.0.0.1 at 2018-08-03 20:40:12 -0400
+Processing by PantriesController#edit as HTML
+  Parameters: {"authenticity_token"=>"NkhpYlSkn4+PmexVCqyQR3OrllFi38Hea+xSinFbIaAMPK76IU318klfahZ0x4HGN/A+FD7MnOFOGbb5GXS4DA==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering pantries/edit.html.erb within layouts/application
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered pantries/edit.html.erb within layouts/application (93.2ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 108ms (Views: 104.6ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/pantries/1" for 127.0.0.1 at 2018-08-03 20:40:13 -0400
+Processing by PantriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AorYu+p90wH8tpXj++9VEjKdBASpu4XHJj32sVf2Lu44/h8jn5S5fDpwE6CFhESTdsasQfWo2PgDyBLCP9m3Qg==", "pantry"=>{"ingredient_ids"=>["", "1"]}, "commit"=>"Update Pantry", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", nil]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 1]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/pantries/1
+Completed 302 Found in 23ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/pantries/1" for 127.0.0.1 at 2018-08-03 20:40:13 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.4ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 20], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 1]]
+  Rendered pantries/show.html.erb within layouts/application (6.2ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 72ms (Views: 16.5ms | ActiveRecord: 6.4ms)
+
+

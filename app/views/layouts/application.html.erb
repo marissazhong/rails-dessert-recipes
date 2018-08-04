@@ -7,7 +7,7 @@
   </head>
   <body>
     <nav>
-        <%= link_to "Home", @user %> <%= link_to "Your Pantry", pantry_path(@user.pantry) %> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to "Home", @user %> <%= link_to "Your Pantry", pantry_path(@user.pantry) %> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Edit Your Account", edit_user_path(@user) %> <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
     </nav>
     
     <p id="notice"><%= notice %></p>
