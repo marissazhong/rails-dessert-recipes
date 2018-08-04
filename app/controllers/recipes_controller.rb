@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
     # /recipes index page showing user's recipes and all recipes
     def index
         @recipes = Recipe.all
-        render :'users/show'
+        render :'users/show' # user home page
     end
 
     def show

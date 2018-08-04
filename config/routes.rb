@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   # get 'auth/failure', to: redirect('/signin')
   delete "/signout", to: "sessions#destroy"
   resources :recipes
-  resources :users
+  resources :users, only: [:new, :create, :edit, :update, :destroy]
+  resources :users, only: [:show] do
+    resources :recipes, only: [:show, :index, :new, :create]
+  end
   resources :pantries, only: [:show, :edit, :update, :destroy]
   resources :ingredients, only: [:index]
 end
