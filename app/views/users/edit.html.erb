@@ -4,6 +4,9 @@
     <%= render partial: 'form', locals: {f: f} %>  
 <% end %>
 
+<%= button_to "Delete Your Account", user_path(@user), :method=>:delete, data: {confirm: "Are you sure?"} %>
+
+
 <br>
 
 <%= link_to 'Back to Your Home Page', user_path(@user) %>

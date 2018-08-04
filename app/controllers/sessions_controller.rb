@@ -22,13 +22,14 @@ class SessionsController < ApplicationController
       end
     elsif auth['uid'] # Facebook Login
       @user = User.find_by(:uid => auth['uid'])
-      if !@user
+      if !@user # create new user
         @user = User.new(:uid => auth['uid']) do |u|
           u.username = auth['info']['name']
           u.image_url = auth['info']['image']
         end
         @pantry = Pantry.create(user_id: @user.id)
         @user.pantry = @pantry
+        @user.email = "facebook_user"
         @user.password_digest = "0"
         @user.save
       end

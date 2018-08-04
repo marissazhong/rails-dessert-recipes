@@ -24,6 +24,9 @@ class UsersController < ApplicationController
     end
 
     def edit
+        if @user.email == "facebook_user"
+            redirect_to user_path(@user)
+        end
     end
   
     def update
@@ -32,6 +35,11 @@ class UsersController < ApplicationController
         else
             render :edit
         end
+    end
+
+    def destroy
+        @user.destroy
+        redirect_to signout_path
     end
 
     private
