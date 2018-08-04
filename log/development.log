@@ -45140,3 +45140,192 @@ Processing by PantriesController#edit as HTML
 Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/pantries/3/edit" for 127.0.0.1 at 2018-08-03 22:36:25 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PantriesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  Rendering pantries/edit.html.erb within layouts/application
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered pantries/edit.html.erb within layouts/application (85.2ms)
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 200 OK in 300ms (Views: 254.2ms | ActiveRecord: 8.0ms)
+
+
+Started PATCH "/pantries/3" for 127.0.0.1 at 2018-08-03 22:36:31 -0400
+Processing by PantriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GmSZXzH/irQ9AQehRK3SfTTogWFG0HcbzgkRvTDJXgfjF0Qvw9Zynjp2IOhnBkoY/K9O4STximN6qsKz2GGFGw==", "pantry"=>{"ingredient_ids"=>[""], "ingredients"=>{"0"=>"sugar", "1"=>"baking powder"}}, "commit"=>"Update Pantry", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", nil]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "0"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "0"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 3], ["ingredient_id", 3]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "1"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "1"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 3], ["ingredient_id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/pantries/3
+Completed 302 Found in 33ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/pantries/3" for 127.0.0.1 at 2018-08-03 22:36:31 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 3], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 3], ["id", 2], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 3], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 3]]
+  Rendered pantries/show.html.erb within layouts/application (3.9ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 12.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/pantries/3/edit" for 127.0.0.1 at 2018-08-03 22:36:49 -0400
+Processing by PantriesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  Rendering pantries/edit.html.erb within layouts/application
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered pantries/edit.html.erb within layouts/application (5.4ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 16.6ms | ActiveRecord: 2.2ms)
+
+
+Started PATCH "/pantries/3" for 127.0.0.1 at 2018-08-03 22:36:53 -0400
+Processing by PantriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NFkDYypL4hNgQqxpq5b6yFPgEYfve1Ac7dKKrODqMs7NKt4T2GIaOWc1iyCIPWKtm6feB41arWRZcVmiCELp0g==", "pantry"=>{"ingredient_ids"=>[""], "ingredients"=>{"0"=>"sugar", "1"=>"baking powder"}}, "commit"=>"Update Pantry", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", nil]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "sugar"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "sugar"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 3], ["ingredient_id", 5]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "baking powder"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "baking powder"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 3], ["ingredient_id", 6]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/pantries/3
+Completed 302 Found in 27ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/pantries/3" for 127.0.0.1 at 2018-08-03 22:36:53 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 3], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 3], ["id", 2], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 3], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 3]]
+  Rendered pantries/show.html.erb within layouts/application (4.6ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 13.7ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/pantries/3?ingredient_id=4" for 127.0.0.1 at 2018-08-03 22:36:56 -0400
+Processing by PantriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mlaOWbokDATtjqEgsRyDG9BnNX0vFHA7cJgdLQsxKctjJVMpSA30Lur5hmmStxt+GCD6/U01jUPEO84j45ny1w==", "ingredient_id"=>"4", "id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "ingredients_pantries" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients_pantries"."ingredient_id" = 4[0m  [["pantry_id", 3]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/pantries/3
+Completed 302 Found in 10ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/pantries/3" for 127.0.0.1 at 2018-08-03 22:36:56 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 3], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 3], ["id", 2], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 3], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 3]]
+  Rendered pantries/show.html.erb within layouts/application (3.5ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 12.5ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/pantries/3?ingredient_id=3" for 127.0.0.1 at 2018-08-03 22:36:57 -0400
+Processing by PantriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j4YwRAc33R7qJ6yebSmRaP2Is9P/IJIYGVoWxUZ4kmd29e009R4lNO1Qi9dOggkNNc98U50Bb2Ct+cXLrtBJew==", "ingredient_id"=>"3", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "ingredients_pantries" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients_pantries"."ingredient_id" = 3[0m  [["pantry_id", 3]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/pantries/3
+Completed 302 Found in 11ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/pantries/3" for 127.0.0.1 at 2018-08-03 22:36:57 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 3], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 3], ["id", 2], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 3], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 3]]
+  Rendered pantries/show.html.erb within layouts/application (4.9ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 14.8ms | ActiveRecord: 1.5ms)
+
+

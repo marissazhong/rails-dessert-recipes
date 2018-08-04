@@ -17,6 +17,11 @@ class PantriesController < ApplicationController
             end
             @pantry.save
         end
+        if params[:pantry][:ingredients] != ""
+            params[:pantry][:ingredients].each do |k,v|
+                @pantry.ingredients << Ingredient.find_or_create_by(name: v.downcase)
+            end
+        end
         redirect_to pantry_path(@pantry)
     end
 
