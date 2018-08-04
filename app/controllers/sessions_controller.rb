@@ -21,9 +21,16 @@ class SessionsController < ApplicationController
         redirect_to signin_path, notice: "Login failed. Please try again."
       end
     elsif auth['uid'] # Facebook Login
-      @user = User.find_or_create_by(:uid => auth['uid']) do |u|
-        u.username = auth['info']['name']
-        u.image_url = auth['info']['image']
+      @user = User.find_by(:uid => auth['uid'])
+      if !@user
+        @user = User.new(:uid => auth['uid']) do |u|
+          u.username = auth['info']['name']
+          u.image_url = auth['info']['image']
+        end
+        @pantry = Pantry.create(user_id: @user.id)
+        @user.pantry = @pantry
+        @user.password_digest = "0"
+        @user.save
       end
       session[:user_id] = @user.try(:id)
       redirect_to user_path(@user)

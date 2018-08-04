@@ -4,4 +4,6 @@
     <%= render partial: 'form', locals: {f: f} %>  
 <% end %>
 
+<%= link_to('Log in with Facebook!', '/auth/facebook') %>
+
 <p>Already a member? <%= link_to "Login here.", signin_path %></p>

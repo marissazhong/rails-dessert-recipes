@@ -39971,3 +39971,2060 @@ Processing by PantriesController#show as HTML
 Completed 200 OK in 72ms (Views: 16.5ms | ActiveRecord: 6.4ms)
 
 
+Started GET "/pantries/1" for 127.0.0.1 at 2018-08-03 20:41:14 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 20], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 1]]
+  Rendered pantries/show.html.erb within layouts/application (6.8ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 299ms (Views: 167.6ms | ActiveRecord: 12.3ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-08-03 20:41:22 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0ZYSvzjRwX16jWREbJqV4J70yui0EA0FULL91sw6vtzr4tUnTTirALxL4gcS8YRh2q9iregDUDp1RxmlpBUncA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-03 20:41:22 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.6ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:41:24 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (6.1ms)
+  Rendered users/new.html.erb (8.8ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-08-03 20:41:30 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GFjkOq62eFuh4TFWsqg0I3pfdib7XU4VVFi6lPApl766XJsGuQlf+Cls2G7fJ8/7h7EmOsSuBLSKeO8M9U/BcQ==", "user"=>{"username"=>"hello", "email"=>"hello@hello.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email") VALUES (?, ?, ?)[0m  [["username", "hello"], ["password_digest", "$2a$10$iHufp04UBajFPl6JwVGpie2.ENHJap.pvKggGPBBVxgRQgLT/86Z6"], ["email", "hello@hello.com"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pantries" ("user_id") VALUES (?)[0m  [["user_id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/2
+Completed 302 Found in 80ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-08-03 20:41:30 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.1ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered recipes/_index.html.erb (1.2ms)
+  Rendered users/show.html.erb within layouts/application (6.5ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-08-03 20:41:50 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (7.6ms)
+  Rendered recipes/new.html.erb within layouts/application (9.6ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2018-08-03 20:42:23 -0400
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LJaP6ZyKcSYVtPwHxdPJdTZkWZBnSKsM+mWNsK+N1/IW4khx6WMbW9NyekS7uNj0cj/x1Ttb9jPfkGnDx6JOXg==", "recipe"=>{"name"=>"Hello's Recipe", "prep_time"=>"30", "cook_time"=>"30", "ingredients_recipes_attributes"=>{"0"=>{"input_name"=>"flour", "quantity"=>"2 cups"}, "1"=>{"input_name"=>"milk", "quantity"=>"1 cup"}, "2"=>{"input_name"=>"sugar", "quantity"=>"1 cup"}}, "directions"=>{"0"=>"Mix it up.", "1"=>"Bake it.", "2"=>"Cool it."}}, "commit"=>"Create Recipe"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: :directions
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" IS NULL[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "flour"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "milk"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "sugar"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "directions", "created_at", "updated_at", "prep_time", "cook_time", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hello's Recipe"], ["directions", "[\"Mix it up.\", \"Bake it.\", \"Cool it.\"]"], ["created_at", "2018-08-04 00:42:23.477990"], ["updated_at", "2018-08-04 00:42:23.477990"], ["prep_time", 30], ["cook_time", 30], ["user_id", 2]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 1], ["recipe_id", 4], ["input_name", "flour"], ["quantity", "2 cups"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 11], ["recipe_id", 4], ["input_name", "milk"], ["quantity", "1 cup"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 2], ["recipe_id", 4], ["input_name", "sugar"], ["quantity", "1 cup"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/recipes/4
+Completed 302 Found in 18ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/recipes/4" for 127.0.0.1 at 2018-08-03 20:42:23 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 4]]
+  Rendered recipes/show.html.erb within layouts/application (2.6ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-08-03 20:42:36 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.4ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered recipes/_index.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2/recipes" for 127.0.0.1 at 2018-08-03 20:42:39 -0400
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.4ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered recipes/_index.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (6.2ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2/recipes/1" for 127.0.0.1 at 2018-08-03 20:42:42 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (3.7ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2/recipes/4" for 127.0.0.1 at 2018-08-03 20:43:58 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>"2", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 4]]
+  Rendered recipes/show.html.erb within layouts/application (2.4ms)
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-08-03 20:44:27 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OKyNmEKCw9r39o7dBJMna6Osn+k9yE078GWjhps/WmQC2EoAN2uppzEwCJ56+Dbq5/c3rGHbEATVkEf18xDDyA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-03 20:44:27 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:44:30 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb (3.8ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:44:49 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.1ms)
+  Rendered users/new.html.erb (3.7ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 20:44:52 -0400
+Started GET "/auth/facebook/callback?code=AQDWnDgeffo7bg2l1aa6CyPLXR-MF2ZIQ269cugzLXTeeWZqGIVePkC0wj72PwCP1drREzFhq_SUuSLesi4ie_FvoYcN6TagTroFheVpSGc_wq-H5j5rag5PhKABwHpOwTPHH725vitgB4Sub5CjDzxfBtI3RAmVEaKDo3u31P8jXFlUpCStQCCwr4wCqK-p6C8s1QeYic7STvqJn2xNuT5WXCIXmYCn8OdtkumL-sMDDXgx1V9QIaox0LZBzHjsrej3IAWp8QZLqJZz-0dlKXdAFNXwT1sAZqWm4aPA8_B71-isbQY9F5LlUnGGxZhwX2rgQ51QzJddlZff-640p0gx&state=a0b2764a01b396be87fe9470893158f2bf191ed71c0ad31a" for 127.0.0.1 at 2018-08-03 20:44:58 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDWnDgeffo7bg2l1aa6CyPLXR-MF2ZIQ269cugzLXTeeWZqGIVePkC0wj72PwCP1drREzFhq_SUuSLesi4ie_FvoYcN6TagTroFheVpSGc_wq-H5j5rag5PhKABwHpOwTPHH725vitgB4Sub5CjDzxfBtI3RAmVEaKDo3u31P8jXFlUpCStQCCwr4wCqK-p6C8s1QeYic7STvqJn2xNuT5WXCIXmYCn8OdtkumL-sMDDXgx1V9QIaox0LZBzHjsrej3IAWp8QZLqJZz-0dlKXdAFNXwT1sAZqWm4aPA8_B71-isbQY9F5LlUnGGxZhwX2rgQ51QzJddlZff-640p0gx", "state"=>"a0b2764a01b396be87fe9470893158f2bf191ed71c0ad31a"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "image_url", "uid") VALUES (?, ?, ?)[0m  [["username", "Marissa Zhong"], ["image_url", "http://graph.facebook.com/v2.10/4395504565585/picture"], ["uid", 4395504565585]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/users/3
+Completed 302 Found in 11ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-08-03 20:44:59 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.4ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered recipes/_index.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pantries", :id=>nil}, missing required keys: [:id]):
+     7:   </head>
+     8:   <body>
+     9:     <nav>
+    10:         <%= link_to "Home", @user %> <%= link_to "Your Pantry", pantry_path(@user.pantry) %> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Edit Your Account", edit_user_path(@user) %> <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    11:     </nav>
+    12:     
+    13:     <p id="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2144122934113308591_70126613422680'
+Started GET "/auth/facebook/callback?code=AQAYA6apbPz9XzuyJ3T16a-AI4yvlOoULd8AHEbf8eJfc1Kss89ssIA7gay2UFg9a42_vfHn2wFnPWUbV8379MwEejfMx-85bhfY_pNjA2IOfz-SF52RgUke6G-3f2tKXsBsycDwIwsl91Augqx70rrzELCpsukp2VAwPdFuE4Y_A9nadLRXNnKXrKVYaZjK65KqwDge7i9l1eVLk3b7jD8FHsoIeOFRrI2o6minCuaJHijkJY6-lDQ2FEty8XOkboybIv62CeSHaqTNLyAmIgSqZ02u0eBwYKei7DkmY5FRUQQNaKYlpYA5dHF7U9dgOyop3XlfY87we-DWsLSyBmq7&state=a0b2764a01b396be87fe9470893158f2bf191ed71c0ad31a" for 127.0.0.1 at 2018-08-03 20:46:27 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.3.1) lib/omniauth/strategies/oauth2.rb:75:in `callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:46:28 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb (3.8ms)
+Completed 200 OK in 16ms (Views: 5.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 20:46:30 -0400
+Started GET "/auth/facebook/callback?code=AQCbmAX77JSB7Ivp8F_QlIvWCFRCbcTG3D0qm6sRKaDC2yzZ3b6TkO-6CESNyY79bLXj0QOcYQEUbsOsrrpcF9vAtnVdXiXuiIq5AL-OsCbUFFe9HTg8ikNueMZNgwMyhI2AEly9fFdsUoko1_AM_4mUHyNxQ7g4sp7lSF3jZuGO_gNm3ZBl3sAcMmaHe664CqD0RgqpFVQbLl4cBzMtiDy4CYHkREcgz4i29XRuiLZx-GXI3UrNeQdFX-B3yDFCG-_43gHaElu63m0njOczCh2m9M_oE1Cv-Mv4GVfxinbgwRx1HJVdUXhU-qSHgxIXz6e3ZghAE-aUOPPxCz0kzqrd&state=c2d6baed89d4e3f7e22c53e7e23c4a72bbf4772701f0e605" for 127.0.0.1 at 2018-08-03 20:46:30 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCbmAX77JSB7Ivp8F_QlIvWCFRCbcTG3D0qm6sRKaDC2yzZ3b6TkO-6CESNyY79bLXj0QOcYQEUbsOsrrpcF9vAtnVdXiXuiIq5AL-OsCbUFFe9HTg8ikNueMZNgwMyhI2AEly9fFdsUoko1_AM_4mUHyNxQ7g4sp7lSF3jZuGO_gNm3ZBl3sAcMmaHe664CqD0RgqpFVQbLl4cBzMtiDy4CYHkREcgz4i29XRuiLZx-GXI3UrNeQdFX-B3yDFCG-_43gHaElu63m0njOczCh2m9M_oE1Cv-Mv4GVfxinbgwRx1HJVdUXhU-qSHgxIXz6e3ZghAE-aUOPPxCz0kzqrd", "state"=>"c2d6baed89d4e3f7e22c53e7e23c4a72bbf4772701f0e605"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/3
+Completed 302 Found in 72ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-08-03 20:46:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (8.5ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered recipes/_index.html.erb (1.8ms)
+  Rendered users/show.html.erb within layouts/application (26.6ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pantries", :id=>nil}, missing required keys: [:id]):
+     7:   </head>
+     8:   <body>
+     9:     <nav>
+    10:         <%= link_to "Home", @user %> <%= link_to "Your Pantry", pantry_path(@user.pantry) %> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Edit Your Account", edit_user_path(@user) %> <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    11:     </nav>
+    12:     
+    13:     <p id="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2144122934113308591_70126615304640'
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:47:12 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb (3.5ms)
+Completed 200 OK in 16ms (Views: 5.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 20:47:14 -0400
+Started GET "/auth/facebook/callback?code=AQDMS65x3Lk5Cvd7IVBzeq97e-FJNWI5bN6VZ2By7v5-_Sdcc59SghBH3gezUGRk2z_3JDrCN_0yZqpcyV796QqDvxyGlEJ-U_ayWXcXym0EfD6xOoy0enYuVzzhMJtAs6FzZ_PZ7XozjK6GMvLiOIQt6oiJV7vba3cN1pyuOYFRSoWYdWvHCl0jEWjYX9Kp8OGwP55_4AMu9GDFJJ2lQWofBwuX0hsFSbESLsV5eAFEyV_imwqDYEdSPxLAWOofa2jm-OQ3lf_vSDEhVh2YAcNBp6EjLvBzjccyG_n3GafWnbnQCRw6inpUUIV-2k4unUVEy0zP81afSa9VU0XqhJXZ&state=b757c6aa090717dfa499077a94070ed71b23fd4078f62d9f" for 127.0.0.1 at 2018-08-03 20:47:14 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDMS65x3Lk5Cvd7IVBzeq97e-FJNWI5bN6VZ2By7v5-_Sdcc59SghBH3gezUGRk2z_3JDrCN_0yZqpcyV796QqDvxyGlEJ-U_ayWXcXym0EfD6xOoy0enYuVzzhMJtAs6FzZ_PZ7XozjK6GMvLiOIQt6oiJV7vba3cN1pyuOYFRSoWYdWvHCl0jEWjYX9Kp8OGwP55_4AMu9GDFJJ2lQWofBwuX0hsFSbESLsV5eAFEyV_imwqDYEdSPxLAWOofa2jm-OQ3lf_vSDEhVh2YAcNBp6EjLvBzjccyG_n3GafWnbnQCRw6inpUUIV-2k4unUVEy0zP81afSa9VU0XqhJXZ", "state"=>"b757c6aa090717dfa499077a94070ed71b23fd4078f62d9f"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/3
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2018-08-03 20:47:14 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (8.8ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered recipes/_index.html.erb (1.3ms)
+  Rendered users/show.html.erb within layouts/application (14.5ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pantries", :id=>nil}, missing required keys: [:id]):
+     7:   </head>
+     8:   <body>
+     9:     <nav>
+    10:         <%= link_to "Home", @user %> <%= link_to "Your Pantry", pantry_path(@user.pantry) %> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Edit Your Account", edit_user_path(@user) %> <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    11:     </nav>
+    12:     
+    13:     <p id="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___2144122934113308591_70126610877540'
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:47:18 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb (3.4ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUser (20180730142616)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142616"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipe (20180730142634)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "rating" decimal, "instructions" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142634"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredient (20180730142639)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142639"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipeIngredient (20180730142646)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "recipe_ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipe_id" integer, "ingredient_id" integer, "quantity" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142646"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTimeToRecipe (20180731184405)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "prep_time" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "recipes" ADD "cook_time" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731184405"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeInstructionsColumnToDirections (20180731193616)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "rating" decimal DEFAULT NULL, "directions" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "prep_time" integer DEFAULT NULL, "cook_time" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arecipes" ("id","name","rating","directions","created_at","updated_at","prep_time","cook_time")
+                     SELECT "id","name","rating","instructions","created_at","updated_at","prep_time","cook_time" FROM "recipes"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "recipes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "rating" decimal DEFAULT NULL, "directions" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "prep_time" integer DEFAULT NULL, "cook_time" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("id","name","rating","directions","created_at","updated_at","prep_time","cook_time")
+                     SELECT "id","name","rating","directions","created_at","updated_at","prep_time","cook_time" FROM "arecipes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arecipes"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731193616"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToRecipeIngredients (20180731204102)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipe_ingredients" ADD "input_name" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731204102"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailToUser (20180802115806)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802115806"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToRecipe (20180802125844)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "user_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802125844"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropRecipeIngredients (20180802204713)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "recipe_ingredients"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802204713"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredientsRecipe (20180802204946)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ingredients_recipes" ("ingredient_id" integer NOT NULL, "recipe_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ingredients_recipes_on_ingredient_id" ON "ingredients_recipes" ("ingredient_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ingredients_recipes_on_recipe_id" ON "ingredients_recipes" ("recipe_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802204946"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddInputNameAndQuantityToIngredientsRecipes (20180802210044)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "ingredients_recipes" ADD "input_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "ingredients_recipes" ADD "quantity" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802210044"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUidToUsers (20180803115813)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803115813"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFbColumnsToUsers (20180803120142)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_name" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_email" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_image" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803120142"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameUidInUsers (20180803120504)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fb_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fb_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803120504"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameFbToGoogleInUsers (20180803132630)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803132630"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameGoogleColumns (20180803145121)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","google_image_url" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","google_name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","google_name","google_image_url" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","google_image_url" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803145121"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeUidToLargerLimit (20180803150321)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","image_url" FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","name","image_url")
+                     SELECT "id","username","password_digest","email","name","image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" integer(8)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803150321"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePantry (20180803193328)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "pantries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803193328"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJoinTablePantryIngredients (20180803203343)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ingredients_pantries" ("pantry_id" integer NOT NULL, "ingredient_id" integer NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803203343"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-04 00:47:42.667115"], ["updated_at", "2018-08-04 00:47:42.667115"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+[0m
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:47:58 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 20ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  
+app/controllers/application_controller.rb:24:in `current_user'
+Started GET "/" for 127.0.0.1 at 2018-08-03 20:48:07 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  
+app/controllers/application_controller.rb:24:in `current_user'
+Started GET "/" for 127.0.0.1 at 2018-08-03 20:48:07 -0400
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  
+app/controllers/application_controller.rb:24:in `current_user'
+Started GET "/" for 127.0.0.1 at 2018-08-03 20:48:23 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.6ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:48:25 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered users/new.html.erb (8.8ms)
+Completed 200 OK in 20ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 20:48:27 -0400
+Started GET "/auth/facebook/callback?code=AQCE1Nqn5gsvW1PY8QpW78yIUxVbfTVlcJEVJpA3ciLqNvAAbPUlJQ57dtXttxbUjCW8M7Ta3ebjtNMUhslXGGdTmikeHa1oX1RA55R_l-BX--2T0-N3J7Ks5mpTZazMsUBFK5QuFUElyUafTmv_VLvbe5LfaY5n-zRFrDe_vFwaW_maFV6CymCnPjSKnoruzZ9G7ITXhjNq-1Ec7_EJOXIQjja_69_CFltXKCe-Jc-fg1kZJicqqQ_mJ3Lgg5H5J3LkU6Z5BpOdKj06fuhL5bKjlmqzlyqXR6JhxdRDxlyThZFNNOk3S2M4Gc7D1wvBzb2IDiPnJ0-i-QftoqW55zH1&state=c269a5a6e91a1f6f8c902b3998ff3f5decd49faa4511ffd0" for 127.0.0.1 at 2018-08-03 20:48:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCE1Nqn5gsvW1PY8QpW78yIUxVbfTVlcJEVJpA3ciLqNvAAbPUlJQ57dtXttxbUjCW8M7Ta3ebjtNMUhslXGGdTmikeHa1oX1RA55R_l-BX--2T0-N3J7Ks5mpTZazMsUBFK5QuFUElyUafTmv_VLvbe5LfaY5n-zRFrDe_vFwaW_maFV6CymCnPjSKnoruzZ9G7ITXhjNq-1Ec7_EJOXIQjja_69_CFltXKCe-Jc-fg1kZJicqqQ_mJ3Lgg5H5J3LkU6Z5BpOdKj06fuhL5bKjlmqzlyqXR6JhxdRDxlyThZFNNOk3S2M4Gc7D1wvBzb2IDiPnJ0-i-QftoqW55zH1", "state"=>"c269a5a6e91a1f6f8c902b3998ff3f5decd49faa4511ffd0"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "image_url", "uid") VALUES (?, ?, ?)[0m  [["username", "Marissa Zhong"], ["image_url", "http://graph.facebook.com/v2.10/4395504565585/picture"], ["uid", 4395504565585]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/users/1
+Completed 302 Found in 10ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 20:48:35 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.9ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (4.0ms)
+  Rendered users/show.html.erb within layouts/application (16.6ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pantries", :id=>nil}, missing required keys: [:id]):
+     7:   </head>
+     8:   <body>
+     9:     <nav>
+    10:         <%= link_to "Home", @user %> <%= link_to "Your Pantry", pantry_path(@user.pantry) %> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Edit Your Account", edit_user_path(@user) %> <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    11:     </nav>
+    12:     
+    13:     <p id="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1803526913353182012_70324370565780'
+Started GET "/auth/facebook/callback?code=AQDHIfXCVBOSLuRpZWlFWeBAg_Zk5ks7WmwXz1mhotZgZCgEr2n9xVsRFmiPviq2XAr8zNDrEmrhXJi5svtHWEC7C8NmR9V4xKC4k8kmFaaDueNlpKdpgv2i_9QZhS8Vf47mGt9fQZK2j99HHqAjqUZPwD6fOwhLSUXkKQP_KEjwUx1GYEDiqRShTMAfeSyC0S6GpzRUl8XrD76oySVkoM1EdxyofAPd0f6koZoLt6WitynBS4ZL_JkWJ-KiOLh82ckJtsxUq2DdBKvJ0ieosY-skuZHWV6WUJqolhfq0gn1dYyCPjPavxBHsab0SlLDzxeJqhDY_c0Jiwu43SvP1r4_&state=c269a5a6e91a1f6f8c902b3998ff3f5decd49faa4511ffd0" for 127.0.0.1 at 2018-08-03 20:48:47 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.3.1) lib/omniauth/strategies/oauth2.rb:75:in `callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:48:48 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered users/new.html.erb (3.6ms)
+Completed 200 OK in 16ms (Views: 5.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 20:48:49 -0400
+Started GET "/auth/facebook/callback?code=AQDqSz9sHoY9GBKxbgblDpR7tLR_fp6fdCj3wi_cKXbBZr-vv3oy654lMU4q1Xj9QNaFxUbR71voZ4LeGcdOeAaadrY0qNg00pZCqEgoW1MX_G1O6KQSrXbAY5pIk6h9BRu6oa7KIALUtqpTSVaP8uH-RN59pRDUSqPmmYQkRsRLpK-t08IO5CYKt28_Dh5kSUizXjb1ycF6blH17wjPlyiUgPP-t0j1HqImfyDHNCHv6P36eN5UepNd7J0lX1bOrSiAfyEXo6Saj5o7zT0lnsRa1_Q8sMygqzM94H62Sw__krhNlp3T7nx3IIHWRGHHPrlT3sQ7JfyGGCzrH2hswn8X&state=01c6798a5f67dea257bf55a0c3ee9b8703bd7c8295135c00" for 127.0.0.1 at 2018-08-03 20:48:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDqSz9sHoY9GBKxbgblDpR7tLR_fp6fdCj3wi_cKXbBZr-vv3oy654lMU4q1Xj9QNaFxUbR71voZ4LeGcdOeAaadrY0qNg00pZCqEgoW1MX_G1O6KQSrXbAY5pIk6h9BRu6oa7KIALUtqpTSVaP8uH-RN59pRDUSqPmmYQkRsRLpK-t08IO5CYKt28_Dh5kSUizXjb1ycF6blH17wjPlyiUgPP-t0j1HqImfyDHNCHv6P36eN5UepNd7J0lX1bOrSiAfyEXo6Saj5o7zT0lnsRa1_Q8sMygqzM94H62Sw__krhNlp3T7nx3IIHWRGHHPrlT3sQ7JfyGGCzrH2hswn8X", "state"=>"01c6798a5f67dea257bf55a0c3ee9b8703bd7c8295135c00"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 20:48:50 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.9ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (1.3ms)
+  Rendered users/show.html.erb within layouts/application (7.5ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pantries", :id=>nil}, missing required keys: [:id]):
+     7:   </head>
+     8:   <body>
+     9:     <nav>
+    10:         <%= link_to "Home", @user %> <%= link_to "Your Pantry", pantry_path(@user.pantry) %> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Edit Your Account", edit_user_path(@user) %> <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    11:     </nav>
+    12:     
+    13:     <p id="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1803526913353182012_70324429853580'
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:48:52 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb (3.3ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:53:42 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb (3.3ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 20:53:45 -0400
+Started GET "/auth/facebook/callback?code=AQCg4Jbv6OzcKB97X5wI28tZK4wWHgs4nrH3lA7olzm0ROzF3R_V5Fyih1f6mrJEbPYMYSuvZhH3-XmoIGcJ8lK7PLSP1cT7SDdmrLwd0OWL64BSSan1uTNFFMEexWAHlJxUUQNQHgPgLQUV7o5_P7HE3FR7i7dIQFkVifZ2S8COTQj_TR4GQ0x6WYIaUf-HuhpCB_YOpIokffZd4INLSwkVZ8xw86sRi8wm4Lseyfh8ZZoiRxrcizTVM8PCAvyCOjV5iq5uX2aUzKYJ1NLUcMu-MYr_etjdCOyo6yFW4f_YrgRJkr4gQ7AvEtm9iVq_rhVnAuuJddBOZ4EcirV-eoEY&state=eb373b936f6ab5eba45877019c913d8895c715dbf8f13617" for 127.0.0.1 at 2018-08-03 20:53:45 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCg4Jbv6OzcKB97X5wI28tZK4wWHgs4nrH3lA7olzm0ROzF3R_V5Fyih1f6mrJEbPYMYSuvZhH3-XmoIGcJ8lK7PLSP1cT7SDdmrLwd0OWL64BSSan1uTNFFMEexWAHlJxUUQNQHgPgLQUV7o5_P7HE3FR7i7dIQFkVifZ2S8COTQj_TR4GQ0x6WYIaUf-HuhpCB_YOpIokffZd4INLSwkVZ8xw86sRi8wm4Lseyfh8ZZoiRxrcizTVM8PCAvyCOjV5iq5uX2aUzKYJ1NLUcMu-MYr_etjdCOyo6yFW4f_YrgRJkr4gQ7AvEtm9iVq_rhVnAuuJddBOZ4EcirV-eoEY", "state"=>"eb373b936f6ab5eba45877019c913d8895c715dbf8f13617"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 20:53:45 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.0ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (5.4ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pantries", :id=>nil}, missing required keys: [:id]):
+     7:   </head>
+     8:   <body>
+     9:     <nav>
+    10:         <%= link_to "Home", @user %> <%= link_to "Your Pantry", pantry_path(@user.pantry) %> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Edit Your Account", edit_user_path(@user) %> <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    11:     </nav>
+    12:     
+    13:     <p id="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1803526913353182012_70324372206140'
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:53:48 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (0.9ms)
+  Rendered users/new.html.erb (3.2ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUser (20180730142616)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142616"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipe (20180730142634)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "rating" decimal, "instructions" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142634"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredient (20180730142639)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142639"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipeIngredient (20180730142646)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "recipe_ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipe_id" integer, "ingredient_id" integer, "quantity" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142646"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTimeToRecipe (20180731184405)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "recipes" ADD "prep_time" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "recipes" ADD "cook_time" integer[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731184405"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeInstructionsColumnToDirections (20180731193616)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "rating" decimal DEFAULT NULL, "directions" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "prep_time" integer DEFAULT NULL, "cook_time" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arecipes" ("id","name","rating","directions","created_at","updated_at","prep_time","cook_time")
+                     SELECT "id","name","rating","instructions","created_at","updated_at","prep_time","cook_time" FROM "recipes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "recipes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "rating" decimal DEFAULT NULL, "directions" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "prep_time" integer DEFAULT NULL, "cook_time" integer DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "recipes" ("id","name","rating","directions","created_at","updated_at","prep_time","cook_time")
+                     SELECT "id","name","rating","directions","created_at","updated_at","prep_time","cook_time" FROM "arecipes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "arecipes"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731193616"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToRecipeIngredients (20180731204102)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipe_ingredients" ADD "input_name" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731204102"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailToUser (20180802115806)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802115806"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToRecipe (20180802125844)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "recipes" ADD "user_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802125844"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropRecipeIngredients (20180802204713)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "recipe_ingredients"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802204713"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredientsRecipe (20180802204946)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ingredients_recipes" ("ingredient_id" integer NOT NULL, "recipe_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ingredients_recipes_on_ingredient_id" ON "ingredients_recipes" ("ingredient_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ingredients_recipes_on_recipe_id" ON "ingredients_recipes" ("recipe_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802204946"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddInputNameAndQuantityToIngredientsRecipes (20180802210044)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "ingredients_recipes" ADD "input_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "ingredients_recipes" ADD "quantity" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802210044"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUidToUsers (20180803115813)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803115813"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFbColumnsToUsers (20180803120142)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_email" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_image" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803120142"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameUidInUsers (20180803120504)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fb_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fb_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803120504"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameFbToGoogleInUsers (20180803132630)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803132630"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameGoogleColumns (20180803145121)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","google_image_url" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","google_name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","google_name","google_image_url" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","google_image_url" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803145121"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeUidToLargerLimit (20180803150321)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","image_url" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","name","image_url")
+                     SELECT "id","username","password_digest","email","name","image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" integer(8)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803150321"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePantry (20180803193328)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "pantries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803193328"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJoinTablePantryIngredients (20180803203343)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ingredients_pantries" ("pantry_id" integer NOT NULL, "ingredient_id" integer NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803203343"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-04 00:54:15.202243"], ["updated_at", "2018-08-04 00:54:15.202243"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+[0m
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:54:26 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 22ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/application_controller.rb:24:in `current_user'
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:54:40 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (5.9ms)
+  Rendered users/new.html.erb (8.9ms)
+Completed 200 OK in 17ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 20:54:43 -0400
+Started GET "/auth/facebook/callback?code=AQBl2Kn64FmM02HhJohQ6SADJGM86ZGTtgA6m5DT2FVpxuY_UOy568INgu--BMLltTUIpfJfF4sh1-3hH-FJ0MQiFMP3bd00Nv15wMoNYSbZIxfYf1ShkOGpB8-rGh-7yldSCcB1ADl0t7ibbDpIpeDnkwubITTjPFqUR5_tsIEWQ861cYxg2eF_kz6YtZMM7rqc3xyCQlf_-fhibYzbnLv8kna_LHw_28tBkTnzpe8XoRGYYljtO0JR-Bv4kW8xFaero1vNSwKpaEf4ujU4CDwkyQKo1eAkWax05ILiU4Zq9NoTdWXa1QckS7E3KHph1_jVWaUUFER4kPpgXMjM52ov&state=c467d3199e8f782daec27e45c7697d4b044295122dd5a3e7" for 127.0.0.1 at 2018-08-03 20:54:50 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBl2Kn64FmM02HhJohQ6SADJGM86ZGTtgA6m5DT2FVpxuY_UOy568INgu--BMLltTUIpfJfF4sh1-3hH-FJ0MQiFMP3bd00Nv15wMoNYSbZIxfYf1ShkOGpB8-rGh-7yldSCcB1ADl0t7ibbDpIpeDnkwubITTjPFqUR5_tsIEWQ861cYxg2eF_kz6YtZMM7rqc3xyCQlf_-fhibYzbnLv8kna_LHw_28tBkTnzpe8XoRGYYljtO0JR-Bv4kW8xFaero1vNSwKpaEf4ujU4CDwkyQKo1eAkWax05ILiU4Zq9NoTdWXa1QckS7E3KHph1_jVWaUUFER4kPpgXMjM52ov", "state"=>"c467d3199e8f782daec27e45c7697d4b044295122dd5a3e7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "image_url", "uid") VALUES (?, ?, ?)[0m  [["username", "Marissa Zhong"], ["image_url", "http://graph.facebook.com/v2.10/4395504565585/picture"], ["uid", 4395504565585]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/users/1
+Completed 302 Found in 10ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 20:54:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.9ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (3.9ms)
+  Rendered users/show.html.erb within layouts/application (16.6ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pantries", :id=>nil}, missing required keys: [:id]):
+     7:   </head>
+     8:   <body>
+     9:     <nav>
+    10:         <%= link_to "Home", @user %> <%= link_to "Your Pantry", pantry_path(@user.pantry) %> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Edit Your Account", edit_user_path(@user) %> <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    11:     </nav>
+    12:     
+    13:     <p id="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___4390581449041485089_70097267380960'
+Started GET "/auth/facebook/callback?code=AQAN5-9zhmTH1900lI1Bx1SdCIVJAkkjWvmwxOW3EIdNFCP16i_oJW_1mgp2U5ojfxV3efn_m3wnV34tRD3gXgdJsGusTLKA33InHLDyXWKrdD3qHEkP8b06f4z4nNuavkHtJtWMEjo_B8_6UBK9lPkwZM-YTTlqwbpaUYwRm-VIkj93ZAkzQNk3APHVcGZ9vIk-brbNGaQ2GfwnOwcMsl2a-vBuoFl-VuoA6JNIQHeXXQTwx7GBIhOq8MUFKTENLNjIoLhDVnGlC2d4a3RCsiOzIw_61949PzQ_taNBsi7rp3lgTO1naFWV_TrzJLAxr__gQERPXokPiSaF3TXgyPkO&state=c467d3199e8f782daec27e45c7697d4b044295122dd5a3e7" for 127.0.0.1 at 2018-08-03 20:57:14 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (1.8.1) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+omniauth-oauth2 (1.3.1) lib/omniauth/strategies/oauth2.rb:75:in `callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+omniauth (1.8.1) lib/omniauth/builder.rb:63:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+thin (1.7.2) lib/thin/connection.rb:86:in `block in pre_process'
+thin (1.7.2) lib/thin/connection.rb:84:in `catch'
+thin (1.7.2) lib/thin/connection.rb:84:in `pre_process'
+thin (1.7.2) lib/thin/connection.rb:53:in `process'
+thin (1.7.2) lib/thin/connection.rb:39:in `receive_data'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run_machine'
+eventmachine (1.2.7) lib/eventmachine.rb:195:in `run'
+thin (1.7.2) lib/thin/backends/base.rb:73:in `start'
+thin (1.7.2) lib/thin/server.rb:162:in `start'
+thin (1.7.2) lib/thin/controllers/controller.rb:87:in `start'
+thin (1.7.2) lib/thin/runner.rb:203:in `run_command'
+thin (1.7.2) lib/thin/runner.rb:159:in `run!'
+thin (1.7.2) bin/thin:6:in `<top (required)>'
+/usr/local/bin/thin:23:in `load'
+/usr/local/bin/thin:23:in `<top (required)>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli/exec.rb:28:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:424:in `exec'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:27:in `dispatch'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/cli.rb:18:in `start'
+/usr/local/bin/bundle:30:in `block in <main>'
+/usr/local/Cellar/ruby/2.5.1/lib/ruby/2.5.0/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/bin/bundle:22:in `<main>'
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:57:16 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb (3.7ms)
+Completed 200 OK in 16ms (Views: 5.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:57:17 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb (3.4ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 20:57:18 -0400
+Started GET "/auth/facebook/callback?code=AQBO_yPywgXXaDJYaaDbtv-WW8nZzyA42pu4Q2MIQppioopVJddA51hkLmwM2XwM_1YjQrMR1waw64vdER2jMV9VfLzd3PrE6hoGaRUIYm2W9iln019ke3AcEb_3WEvdyMI3eOJ__Alt1OEs1w7lVPxBeA7L7rIPkkpmWg1v1wuzlLoxntM2cjmMOq3hz02uG3cRTSYQgZyUgNkEKzp0GnpQqEY57DqxIKJY3nMaVdj0lu_ti6T7bqpKyb-uX0MuiCOsf7Ra6_UoFJ3G9PESMAL6gQd4dhIls9ZRZevMil8cBF6U6eyRAx_lBNZuOfk6CIoiJjZSif0XSw3eeNcvvHq9&state=6c4848f9a8d8ae5d5acfa49b56824bd5c34c4ae654c6b6f1" for 127.0.0.1 at 2018-08-03 20:57:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBO_yPywgXXaDJYaaDbtv-WW8nZzyA42pu4Q2MIQppioopVJddA51hkLmwM2XwM_1YjQrMR1waw64vdER2jMV9VfLzd3PrE6hoGaRUIYm2W9iln019ke3AcEb_3WEvdyMI3eOJ__Alt1OEs1w7lVPxBeA7L7rIPkkpmWg1v1wuzlLoxntM2cjmMOq3hz02uG3cRTSYQgZyUgNkEKzp0GnpQqEY57DqxIKJY3nMaVdj0lu_ti6T7bqpKyb-uX0MuiCOsf7Ra6_UoFJ3G9PESMAL6gQd4dhIls9ZRZevMil8cBF6U6eyRAx_lBNZuOfk6CIoiJjZSif0XSw3eeNcvvHq9", "state"=>"6c4848f9a8d8ae5d5acfa49b56824bd5c34c4ae654c6b6f1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 20:57:18 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.8ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (1.5ms)
+  Rendered users/show.html.erb within layouts/application (7.8ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pantries", :id=>nil}, missing required keys: [:id]):
+     7:   </head>
+     8:   <body>
+     9:     <nav>
+    10:         <%= link_to "Home", @user %> <%= link_to "Your Pantry", pantry_path(@user.pantry) %> <%= link_to "New Recipe", new_recipe_path%> [Current User: <%=@user.username%>] <%= link_to "Edit Your Account", edit_user_path(@user) %> <%= link_to "Logout", signout_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+    11:     </nav>
+    12:     
+    13:     <p id="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___4390581449041485089_70097263134840'
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:57:22 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered users/new.html.erb (3.6ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUser (20180730142616)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142616"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipe (20180730142634)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "rating" decimal, "instructions" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142634"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredient (20180730142639)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142639"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipeIngredient (20180730142646)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "recipe_ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipe_id" integer, "ingredient_id" integer, "quantity" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142646"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTimeToRecipe (20180731184405)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "prep_time" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "recipes" ADD "cook_time" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731184405"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeInstructionsColumnToDirections (20180731193616)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "rating" decimal DEFAULT NULL, "directions" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "prep_time" integer DEFAULT NULL, "cook_time" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arecipes" ("id","name","rating","directions","created_at","updated_at","prep_time","cook_time")
+                     SELECT "id","name","rating","instructions","created_at","updated_at","prep_time","cook_time" FROM "recipes"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "recipes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "rating" decimal DEFAULT NULL, "directions" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "prep_time" integer DEFAULT NULL, "cook_time" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("id","name","rating","directions","created_at","updated_at","prep_time","cook_time")
+                     SELECT "id","name","rating","directions","created_at","updated_at","prep_time","cook_time" FROM "arecipes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arecipes"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731193616"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToRecipeIngredients (20180731204102)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "recipe_ingredients" ADD "input_name" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731204102"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailToUser (20180802115806)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802115806"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToRecipe (20180802125844)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "user_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802125844"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropRecipeIngredients (20180802204713)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "recipe_ingredients"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802204713"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredientsRecipe (20180802204946)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ingredients_recipes" ("ingredient_id" integer NOT NULL, "recipe_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ingredients_recipes_on_ingredient_id" ON "ingredients_recipes" ("ingredient_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ingredients_recipes_on_recipe_id" ON "ingredients_recipes" ("recipe_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802204946"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddInputNameAndQuantityToIngredientsRecipes (20180802210044)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "ingredients_recipes" ADD "input_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "ingredients_recipes" ADD "quantity" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802210044"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUidToUsers (20180803115813)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803115813"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFbColumnsToUsers (20180803120142)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_name" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_email" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_image" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803120142"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameUidInUsers (20180803120504)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fb_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fb_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803120504"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameFbToGoogleInUsers (20180803132630)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803132630"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameGoogleColumns (20180803145121)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","google_image_url" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","google_name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","google_name","google_image_url" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","google_image_url" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803145121"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeUidToLargerLimit (20180803150321)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","image_url" FROM "users"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","name","image_url")
+                     SELECT "id","username","password_digest","email","name","image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" integer(8)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803150321"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePantry (20180803193328)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "pantries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803193328"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJoinTablePantryIngredients (20180803203343)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ingredients_pantries" ("pantry_id" integer NOT NULL, "ingredient_id" integer NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803203343"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-04 00:57:56.117350"], ["updated_at", "2018-08-04 00:57:56.117350"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+[0m
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 20:58:12 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered users/new.html.erb (9.6ms)
+Completed 200 OK in 40ms (Views: 13.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 20:58:13 -0400
+Started GET "/auth/facebook/callback?code=AQAGSHZDBqxmoGDmhUMKLIIHEz-pUeAB2V1ilBC1NrAH_20QFVW6Num9FfE4PjNdAlbFosgIetxdvviUV3cnuGVC60C1mDXx96pRK6u2_JQrX0lgdrh_L9dqQxAItYBIN2Fes2duHhZsAykaxc0ZqZRiXh0Qssj92a-9gU56f152AyjGv3up2Ih32X-GN-2vNGTTVksKnNMWMfHjAN3Y9pU1jKXJy9yn9ka_BP15aRIq28kBamPdavNTGwMGjWNMIlecfXDYrmnf71Vyy1JScV5haYyafzuzH7XP1r4RMFaFzYVjVPId5URkioesYmi-HQmt1pEIRo42-2oav9zG0LDB&state=8ebb598b64af3250ebbe40e7aebedca4e4611d3072d4c6a4" for 127.0.0.1 at 2018-08-03 20:58:20 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAGSHZDBqxmoGDmhUMKLIIHEz-pUeAB2V1ilBC1NrAH_20QFVW6Num9FfE4PjNdAlbFosgIetxdvviUV3cnuGVC60C1mDXx96pRK6u2_JQrX0lgdrh_L9dqQxAItYBIN2Fes2duHhZsAykaxc0ZqZRiXh0Qssj92a-9gU56f152AyjGv3up2Ih32X-GN-2vNGTTVksKnNMWMfHjAN3Y9pU1jKXJy9yn9ka_BP15aRIq28kBamPdavNTGwMGjWNMIlecfXDYrmnf71Vyy1JScV5haYyafzuzH7XP1r4RMFaFzYVjVPId5URkioesYmi-HQmt1pEIRo42-2oav9zG0LDB", "state"=>"8ebb598b64af3250ebbe40e7aebedca4e4611d3072d4c6a4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "image_url", "uid") VALUES (?, ?, ?)[0m  [["username", "Marissa Zhong"], ["image_url", "http://graph.facebook.com/v2.10/4395504565585/picture"], ["uid", 4395504565585]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pantries" ("user_id") VALUES (?)[0m  [["user_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/1
+Completed 302 Found in 39ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 20:58:20 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.7ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (1.3ms)
+  Rendered users/show.html.erb within layouts/application (11.0ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 233ms (Views: 225.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pantries/1" for 127.0.0.1 at 2018-08-03 20:58:25 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 1], ["LIMIT", 1]]
+  Rendered pantries/show.html.erb within layouts/application (21.3ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 35ms (Views: 29.9ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-08-03 20:58:56 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"32A0S7ANqtvnrm7H8HQ2yBMZaM3SJJJ/amUQF96eZyN7vcs5qTIQAH33rRWJDbDzl7/5BfMsrcjdIHIvUonTfA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-03 20:58:56 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.5ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-03 20:59:19 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUser (20180730142616)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142616"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipe (20180730142634)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "rating" decimal, "instructions" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142634"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredient (20180730142639)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142639"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipeIngredient (20180730142646)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "recipe_ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipe_id" integer, "ingredient_id" integer, "quantity" varchar)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142646"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTimeToRecipe (20180731184405)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "prep_time" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "recipes" ADD "cook_time" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731184405"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeInstructionsColumnToDirections (20180731193616)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "rating" decimal DEFAULT NULL, "directions" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "prep_time" integer DEFAULT NULL, "cook_time" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arecipes" ("id","name","rating","directions","created_at","updated_at","prep_time","cook_time")
+                     SELECT "id","name","rating","instructions","created_at","updated_at","prep_time","cook_time" FROM "recipes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "recipes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "rating" decimal DEFAULT NULL, "directions" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "prep_time" integer DEFAULT NULL, "cook_time" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("id","name","rating","directions","created_at","updated_at","prep_time","cook_time")
+                     SELECT "id","name","rating","directions","created_at","updated_at","prep_time","cook_time" FROM "arecipes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arecipes"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731193616"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToRecipeIngredients (20180731204102)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipe_ingredients" ADD "input_name" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731204102"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailToUser (20180802115806)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802115806"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToRecipe (20180802125844)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "user_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802125844"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropRecipeIngredients (20180802204713)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "recipe_ingredients"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802204713"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredientsRecipe (20180802204946)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ingredients_recipes" ("ingredient_id" integer NOT NULL, "recipe_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_ingredients_recipes_on_ingredient_id" ON "ingredients_recipes" ("ingredient_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ingredients_recipes_on_recipe_id" ON "ingredients_recipes" ("recipe_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802204946"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddInputNameAndQuantityToIngredientsRecipes (20180802210044)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "ingredients_recipes" ADD "input_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "ingredients_recipes" ADD "quantity" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802210044"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUidToUsers (20180803115813)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803115813"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFbColumnsToUsers (20180803120142)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_email" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_image" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803120142"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameUidInUsers (20180803120504)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fb_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fb_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803120504"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameFbToGoogleInUsers (20180803132630)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803132630"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameGoogleColumns (20180803145121)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","google_image_url" FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","google_name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","google_name","google_image_url" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","google_image_url" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803145121"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeUidToLargerLimit (20180803150321)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","image_url" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","name","image_url")
+                     SELECT "id","username","password_digest","email","name","image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" integer(8)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803150321"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePantry (20180803193328)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "pantries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803193328"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJoinTablePantryIngredients (20180803203343)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ingredients_pantries" ("pantry_id" integer NOT NULL, "ingredient_id" integer NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803203343"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-04 00:59:43.404327"], ["updated_at", "2018-08-04 00:59:43.404327"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-08-03 21:03:27 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (1.5ms)
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 21:03:30 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (6.0ms)
+  Rendered users/new.html.erb (9.7ms)
+Completed 200 OK in 26ms (Views: 12.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 21:03:31 -0400
+Started GET "/auth/facebook/callback?code=AQBLrJ6ZkdxBMuI4jIavnW7MFA4dM-HXng1FKGszc2ek-0LYTTieFwYBoT38L977EQ1quweJT4_QS9gQWnlqb2w5Z_47B71uKZVtRQWALVRe80jkCUuylczSFr1GLrNKR7kJzQuQWaxP-xugY7kSZrufN3zf1CYhiileAmn_TYCHktPMf3MOCYnEAufUFGPuN1I495Vz7h_TomJMdWdNlG5ZKhRfF3bf5i--T3owNFaDY7QIlSutik_fN0QpMj01s8szAgCWKtWy2Lumt6iPhXcRFrAjTXLve28sVrtfPOpaX_eoTBWJ2x48-ujagRYEFtMHLO5iykuz4i2doPRlf3be&state=154b413c1914383beb020f1399ecac4e2f3074f81dee7fa0" for 127.0.0.1 at 2018-08-03 21:03:39 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBLrJ6ZkdxBMuI4jIavnW7MFA4dM-HXng1FKGszc2ek-0LYTTieFwYBoT38L977EQ1quweJT4_QS9gQWnlqb2w5Z_47B71uKZVtRQWALVRe80jkCUuylczSFr1GLrNKR7kJzQuQWaxP-xugY7kSZrufN3zf1CYhiileAmn_TYCHktPMf3MOCYnEAufUFGPuN1I495Vz7h_TomJMdWdNlG5ZKhRfF3bf5i--T3owNFaDY7QIlSutik_fN0QpMj01s8szAgCWKtWy2Lumt6iPhXcRFrAjTXLve28sVrtfPOpaX_eoTBWJ2x48-ujagRYEFtMHLO5iykuz4i2doPRlf3be", "state"=>"154b413c1914383beb020f1399ecac4e2f3074f81dee7fa0"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "image_url", "uid") VALUES (?, ?, ?, ?)[0m  [["username", "Marissa Zhong"], ["password_digest", "0"], ["image_url", "http://graph.facebook.com/v2.10/4395504565585/picture"], ["uid", 4395504565585]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pantries" ("user_id") VALUES (?)[0m  [["user_id", 1]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/users/1
+Completed 302 Found in 33ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 21:03:39 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.8ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (4.0ms)
+  Rendered users/show.html.erb within layouts/application (13.7ms)
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 184ms (Views: 174.9ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-08-03 21:03:52 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Esxk3OFgXkwqGhNBwcihQ7RlMzfwRdRtaXBriqt4rWDVPNHoUVMkInwIsyywOMDRfw9RaQFbEWz6cSkyDjlJ2w=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-03 21:03:53 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 21:03:54 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered sessions/new.html.erb (4.4ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 21:03:55 -0400
+Started GET "/auth/facebook/callback?code=AQDKYIqm26yF-pRK3lovmor-Rb-a9xTnCXPrwfKielpuJyuU9JSchpsEs8wlOCxjEYYuU3oG74kNjP3fgePoLcw0yxhAslvgNB70dQoK2uX8ZtCMUL0mIFtTJlw_2_os3Refzo2p45kW8uGSCdCH6J-t9VcQ7_U7C-vwlJeNH4ms1geI9jfr9GL677V41tBEF4b-BXdvN4Gk5xfvHZ2WjTjgFoLyamr--Mg0mroHPn3nBWjXHLzKzkHvYCp9RfwPvSgm1jY3MFHjROxxPkkJqX-IaD9Yg-fnmSP70zQoi7dmW2dZaooZiTOBu1PSuoT7x7Jy-MC1NWhk0RZ8ihwH8k2a&state=bf211ff1c4cfd54e61b5f37596a48639aeab1670d19a13a0" for 127.0.0.1 at 2018-08-03 21:03:55 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDKYIqm26yF-pRK3lovmor-Rb-a9xTnCXPrwfKielpuJyuU9JSchpsEs8wlOCxjEYYuU3oG74kNjP3fgePoLcw0yxhAslvgNB70dQoK2uX8ZtCMUL0mIFtTJlw_2_os3Refzo2p45kW8uGSCdCH6J-t9VcQ7_U7C-vwlJeNH4ms1geI9jfr9GL677V41tBEF4b-BXdvN4Gk5xfvHZ2WjTjgFoLyamr--Mg0mroHPn3nBWjXHLzKzkHvYCp9RfwPvSgm1jY3MFHjROxxPkkJqX-IaD9Yg-fnmSP70zQoi7dmW2dZaooZiTOBu1PSuoT7x7Jy-MC1NWhk0RZ8ihwH8k2a", "state"=>"bf211ff1c4cfd54e61b5f37596a48639aeab1670d19a13a0"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/1
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 21:03:55 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (0.9ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-08-03 21:04:02 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PAqtr/gGELTH2WXsgSwEn0xaAi1PdzPkZ4IBqBWJTTH7+hibSDVq2pHLxYHw3GUNhzBgc75p9uX0g0MQsMipig=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-03 21:04:02 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2018-08-03 21:04:03 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb
+  Rendered users/_form.html.erb (1.2ms)
+  Rendered users/new.html.erb (3.6ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-08-03 21:04:10 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H6b2qFe8mNi9kFWmXMoDlb+6J5++kTg3GlUqhLGB6GVQAyO1KDUctVAPOK26YGLf0SnA7knLPBoAlYLaTnzCYg==", "user"=>{"username"=>"hello", "email"=>"hello@hello.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email") VALUES (?, ?, ?)[0m  [["username", "hello"], ["password_digest", "$2a$10$wQm2V54x3XSdOrMP284ik.FdrS2qeW0jCg98zI5/nni88Z7uESiWW"], ["email", "hello@hello.com"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pantries" ("user_id") VALUES (?)[0m  [["user_id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/2
+Completed 302 Found in 80ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-08-03 21:04:10 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (0.9ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered recipes/_index.html.erb (0.7ms)
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at 2018-08-03 21:04:26 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.2ms)
+  Rendered users/edit.html.erb within layouts/application (3.9ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 0.3ms)
+
+
