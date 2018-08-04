@@ -45439,3 +45439,941 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUser (20180730142616)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142616"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipe (20180730142634)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "rating" decimal, "instructions" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142634"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredient (20180730142639)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142639"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRecipeIngredient (20180730142646)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "recipe_ingredients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "recipe_id" integer, "ingredient_id" integer, "quantity" varchar)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730142646"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddTimeToRecipe (20180731184405)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "prep_time" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "recipes" ADD "cook_time" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731184405"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeInstructionsColumnToDirections (20180731193616)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "arecipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "rating" decimal DEFAULT NULL, "directions" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "prep_time" integer DEFAULT NULL, "cook_time" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "arecipes" ("id","name","rating","directions","created_at","updated_at","prep_time","cook_time")
+                     SELECT "id","name","rating","instructions","created_at","updated_at","prep_time","cook_time" FROM "recipes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "recipes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar DEFAULT NULL, "rating" decimal DEFAULT NULL, "directions" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "prep_time" integer DEFAULT NULL, "cook_time" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("id","name","rating","directions","created_at","updated_at","prep_time","cook_time")
+                     SELECT "id","name","rating","directions","created_at","updated_at","prep_time","cook_time" FROM "arecipes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "arecipes"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731193616"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddNameToRecipeIngredients (20180731204102)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipe_ingredients" ADD "input_name" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180731204102"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailToUser (20180802115806)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802115806"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToRecipe (20180802125844)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recipes" ADD "user_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802125844"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropRecipeIngredients (20180802204713)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "recipe_ingredients"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802204713"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateIngredientsRecipe (20180802204946)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ingredients_recipes" ("ingredient_id" integer NOT NULL, "recipe_id" integer NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ingredients_recipes_on_ingredient_id" ON "ingredients_recipes" ("ingredient_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_ingredients_recipes_on_recipe_id" ON "ingredients_recipes" ("recipe_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802204946"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddInputNameAndQuantityToIngredientsRecipes (20180802210044)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "ingredients_recipes" ADD "input_name" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "ingredients_recipes" ADD "quantity" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180802210044"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUidToUsers (20180803115813)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803115813"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFbColumnsToUsers (20180803120142)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_name" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_email" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "fb_image" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803120142"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameUidInUsers (20180803120504)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fb_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "fb_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803120504"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameFbToGoogleInUsers (20180803132630)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","fb_uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "fb_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","fb_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_email","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_email" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","fb_email","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_email","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "fb_image" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","fb_image")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_image" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","google_uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","fb_image" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "google_uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","google_uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803132630"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameGoogleColumns (20180803145121)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","google_uid","google_name","google_image_url" FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "google_name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","google_name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","google_name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","google_name","google_image_url" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "google_image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","name","google_image_url")
+                     SELECT "id","username","password_digest","email","uid","name","google_image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","google_image_url" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803145121"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to ChangeUidToLargerLimit (20180803150321)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "uid" integer DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","password_digest","email","uid","name","image_url")
+                     SELECT "id","username","password_digest","email","uid","name","image_url" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "image_url" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","password_digest","email","name","image_url")
+                     SELECT "id","username","password_digest","email","name","image_url" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" integer(8)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803150321"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePantry (20180803193328)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "pantries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803193328"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateJoinTablePantryIngredients (20180803203343)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ingredients_pantries" ("pantry_id" integer NOT NULL, "ingredient_id" integer NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180803203343"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-04 03:00:41.683517"], ["updated_at", "2018-08-04 03:00:41.683517"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_recipe_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_recipe_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ingredients_recipes_on_ingredient_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "flour"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "sugar"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "powdered sugar"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "chocolate chips"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "cocoa powder"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "vanilla extract"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "baking powder"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "baking soda"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "salt"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "butter"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "milk"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "cream cheese"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "egg"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "vegetable oil"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "marissa"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "marissa@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email") VALUES (?, ?, ?)[0m  [["username", "marissa"], ["password_digest", "$2a$10$7L/nKsYNsNVO9pMIMh9Y9.f20H68JvtzvGvNgSbfNb/L8.IVo.WfG"], ["email", "marissa@gmail.com"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "pantries" ("user_id") VALUES (?)[0m  [["user_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "marissa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at", "prep_time", "cook_time", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Vanilla Cupcakes"], ["created_at", "2018-08-04 03:00:52.661326"], ["updated_at", "2018-08-04 03:00:52.661326"], ["prep_time", 20], ["cook_time", 14], ["user_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "flour"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "baking powder"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "baking soda"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "salt"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "egg"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "sugar"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "vanilla extract"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "oil"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "oil"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "milk"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "recipes" SET "directions" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["directions", "[\"Preheat the oven to 350°F and line a cupcake/muffin pan with cupcake liners.\", \"In a medium bowl, whisk together 1 1/4 cups cake flour (or Canadian flour), 1 1/4 tsp baking powder, 1/2 tsp baking soda and 1/2 tsp salt.\", \"In the bowl of an electric mixer, beat 2 eggs with the whisk attachment on medium speed (15-20 seconds).\", \"Add 3/4 cup sugar and continue to beat on medium speed (30 seconds).\", \"Add vanilla and oil and beat on medium speed (1 minute).\", \"Reduce mixer speed to medium/low and slowly add about half of the flour mixture, mixing until incorporated. Add half of the buttermilk and mix until incorporated. Repeat with remaining flour and buttermilk. Beat until just combined and smooth, scraping down the sides of the mixing bowl as needed. The batter will be thin.\", \"Pour batter into a lined muffin pan. Fill to about 1/2 full (Do-Not overfill).\", \"Bake for 12 -14 minutes at 350 °F or until a toothpick inserted in the center comes out clean. Let them cool in the pan for a couple minutes, then remove. Once the cupcakes are cooled to room temp, pipe on the frosting.\"]"], ["updated_at", "2018-08-04 03:00:52.705401"], ["id", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 1], ["recipe_id", 1], ["input_name", "flour"], ["quantity", "1-1/4 cups"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 7], ["recipe_id", 1], ["input_name", "baking powder"], ["quantity", "1-1/4 tsp"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 8], ["recipe_id", 1], ["input_name", "baking soda"], ["quantity", "1/2 tsp"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 9], ["recipe_id", 1], ["input_name", "salt"], ["quantity", "1/2 tsp"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 13], ["recipe_id", 1], ["input_name", "egg"], ["quantity", "2"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 2], ["recipe_id", 1], ["input_name", "sugar"], ["quantity", "3/4 cup"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 6], ["recipe_id", 1], ["input_name", "vanilla extract"], ["quantity", "1-1/2 tsp"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 15], ["recipe_id", 1], ["input_name", "oil"], ["quantity", "1/2 cup"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 11], ["recipe_id", 1], ["input_name", "milk"], ["quantity", "1/2 cup"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "marissa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at", "prep_time", "cook_time", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Chocolate Chip Cookies"], ["created_at", "2018-08-04 03:00:52.714564"], ["updated_at", "2018-08-04 03:00:52.714564"], ["prep_time", 20], ["cook_time", 10], ["user_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "butter"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "sugar"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "egg"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "vanilla extract"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "baking soda"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "water"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "water"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "salt"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "flour"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "chocolate chips"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "walnuts"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "walnuts"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "recipes" SET "directions" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["directions", "[\"Preheat oven to 350 degrees F.\", \"Cream together the butter, white sugar, and brown sugar until smooth.\", \"Beat in the eggs one at a time, then stir in the vanilla.\", \"Dissolve baking soda in hot water. Add to batter along with salt.\", \"Stir in flour, chocolate chips, and nuts.\", \"Drop by large spoonfuls onto ungreased pans.\", \"Bake for about 10 minutes in the preheated oven, or until edges are nicely browned.\"]"], ["updated_at", "2018-08-04 03:00:52.743389"], ["id", 2]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 10], ["recipe_id", 2], ["input_name", "butter"], ["quantity", "1 cup"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 2], ["recipe_id", 2], ["input_name", "sugar"], ["quantity", "2 cups"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 13], ["recipe_id", 2], ["input_name", "egg"], ["quantity", "2"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 6], ["recipe_id", 2], ["input_name", "vanilla extract"], ["quantity", "2 tsp"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 8], ["recipe_id", 2], ["input_name", "baking soda"], ["quantity", "1 tsp"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 16], ["recipe_id", 2], ["input_name", "water"], ["quantity", "2 tsp"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 9], ["recipe_id", 2], ["input_name", "salt"], ["quantity", "1/2 tsp"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 1], ["recipe_id", 2], ["input_name", "flour"], ["quantity", "3 cups"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 4], ["recipe_id", 2], ["input_name", "chocolate chips"], ["quantity", "2 cups"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 17], ["recipe_id", 2], ["input_name", "walnuts"], ["quantity", "1 cup"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "marissa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "created_at", "updated_at", "prep_time", "cook_time", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pecan Pie"], ["created_at", "2018-08-04 03:00:52.753405"], ["updated_at", "2018-08-04 03:00:52.753405"], ["prep_time", 20], ["cook_time", 60], ["user_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "sugar"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "corn syrup"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "corn syrup"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "butter"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "water"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "cornstarch"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "cornstarch"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "egg"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "salt"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "vanilla extract"], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "pecans"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "pecans"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT ?[0m  [["name", "pie shell"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name") VALUES (?)[0m  [["name", "pie shell"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "recipes" SET "directions" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["directions", "[\"Preheat oven to 350 degrees F.\", \"In a medium saucepan, combine the sugar, corn syrup, butter, water, and cornstarch. Bring to a full boil, and remove from heat.\", \"In a large bowl, beat eggs until frothy. Gradually beat in cooked syrup mixture. Stir in salt, vanilla, and pecans. Pour into pie shell.\", \"Bake in preheated oven for 45 to 50 minutes, or until filling is set.\"]"], ["updated_at", "2018-08-04 03:00:52.780491"], ["id", 3]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 2], ["recipe_id", 3], ["input_name", "sugar"], ["quantity", "1-3/4 cups"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 18], ["recipe_id", 3], ["input_name", "corn syrup"], ["quantity", "1/4 cup"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 10], ["recipe_id", 3], ["input_name", "butter"], ["quantity", "1/4 cup"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 16], ["recipe_id", 3], ["input_name", "water"], ["quantity", "1 tbs"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 19], ["recipe_id", 3], ["input_name", "cornstarch"], ["quantity", "2 tsp"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 13], ["recipe_id", 3], ["input_name", "egg"], ["quantity", "3"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 9], ["recipe_id", 3], ["input_name", "salt"], ["quantity", "1/4 tsp"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 6], ["recipe_id", 3], ["input_name", "vanilla extract"], ["quantity", "1 tsp"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 20], ["recipe_id", 3], ["input_name", "pecans"], ["quantity", "1-1/4 cups"]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ingredients_recipes" ("ingredient_id", "recipe_id", "input_name", "quantity") VALUES (?, ?, ?, ?)[0m  [["ingredient_id", 21], ["recipe_id", 3], ["input_name", "pie shell"], ["quantity", "1"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 23:11:10 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (6.4ms)
+  Rendered sessions/new.html.erb (11.0ms)
+Completed 200 OK in 50ms (Views: 15.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sessions/create" for 127.0.0.1 at 2018-08-03 23:11:18 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Rsmga482aK8OunKm43ZGdjd5M876CPMPHrwfF8pOaRsNjVKxsa4UuaIbjrpc6ZAngGMwwRMLpa8afDJ8ezl7g==", "user"=>{"username"=>"marissa", "email"=>"marissa@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "marissa"], ["LIMIT", 1]]
+Redirected to https://localhost:3000/users/1
+Completed 302 Found in 76ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 23:11:18 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (10.3ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (9.1ms)
+  Rendered users/show.html.erb within layouts/application (31.1ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 231ms (Views: 219.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2018-08-03 23:11:38 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (12.3ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-08-03 23:11:50 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (8.5ms)
+  Rendered recipes/new.html.erb within layouts/application (10.6ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-03 23:11:59 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (2.0ms)
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered recipes/_index.html.erb (1.4ms)
+  Rendered users/show.html.erb within layouts/application (7.4ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/pantries/1" for 127.0.0.1 at 2018-08-03 23:12:08 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 1], ["LIMIT", 1]]
+  Rendered pantries/show.html.erb within layouts/application (2.4ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 12.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/pantries/1/edit" for 127.0.0.1 at 2018-08-03 23:12:33 -0400
+Processing by PantriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering pantries/edit.html.erb within layouts/application
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered pantries/edit.html.erb within layouts/application (118.0ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 133ms (Views: 129.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/pantries/1" for 127.0.0.1 at 2018-08-03 23:12:52 -0400
+Processing by PantriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X+WYDH7diYbMrvdp0+UdsYh9txaPEytQP7I/Wn/LS5FR+FdREAD5o93lKITCuHk2VKFPThgL6O17K3MTGq/KQQ==", "pantry"=>{"ingredient_ids"=>["", "1", "2", "3"], "ingredients"=>{"0"=>""}}, "commit"=>"Update Pantry", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", nil]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 1]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/pantries/1
+Completed 302 Found in 29ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/pantries/1" for 127.0.0.1 at 2018-08-03 23:12:52 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 18], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 1]]
+  Rendered pantries/show.html.erb within layouts/application (4.4ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 33ms (Views: 16.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/pantries/1/edit" for 127.0.0.1 at 2018-08-03 23:13:00 -0400
+Processing by PantriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendering pantries/edit.html.erb within layouts/application
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered pantries/edit.html.erb within layouts/application (9.5ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/pantries/1" for 127.0.0.1 at 2018-08-03 23:13:26 -0400
+Processing by PantriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s7NSCWelsepPUng/Oixt4AUM24Au17yjxDRfCOqygTG9rp1UCXjBz14Zp9IrcQln2dAj2LnPfx6ArRNBj9YA4Q==", "pantry"=>{"ingredient_ids"=>["", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19"], "ingredients"=>{"0"=>""}}, "commit"=>"Update Pantry", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", nil]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 4]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 5]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 6]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 7]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 8]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 9]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 9]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 10]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 10]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 11]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 12]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 13]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 13]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 14]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 15]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 16]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 16]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 17]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 17]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 18]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 18]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ?[0m  [["id", 19]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients_pantries" ("pantry_id", "ingredient_id") VALUES (?, ?)[0m  [["pantry_id", 1], ["ingredient_id", 19]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/pantries/1
+Completed 302 Found in 106ms (ActiveRecord: 33.7ms)
+
+
+Started GET "/pantries/1" for 127.0.0.1 at 2018-08-03 23:13:26 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 15], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 4], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 17], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 20], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 1]]
+  Rendered pantries/show.html.erb within layouts/application (8.6ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 22.5ms | ActiveRecord: 8.0ms)
+
+
+Started DELETE "/pantries/1?ingredient_id=1" for 127.0.0.1 at 2018-08-03 23:13:35 -0400
+Processing by PantriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Qh42susj7rX1ekSxB4TYSPWFyPnI0ep2V6WT5KgsY7VMA/nvhf6ekOQxm1wW2bzPKVkwoV/JKcsTPN+tzUjiZQ==", "ingredient_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "ingredients_pantries" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients_pantries"."ingredient_id" = 1[0m  [["pantry_id", 1]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/pantries/1
+Completed 302 Found in 11ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/pantries/1" for 127.0.0.1 at 2018-08-03 23:13:35 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 8], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.3ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 18], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 16], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 19], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 13], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Load (0.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Ingredient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 6], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 1], ["id", 20], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ?[0m  [["pantry_id", 1]]
+  Rendered pantries/show.html.erb within layouts/application (6.0ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 15.7ms | ActiveRecord: 4.6ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-08-03 23:13:46 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BiiMUXNa4lDEi8melLKkVYbNIDHcvIrI21p+CvDhZIkINUMMHYeSddXAFnOF78DSWhHYaUukSXWfwzJDlYXlWQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-03 23:13:46 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2018-08-03 23:13:49 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered users/_form.html.erb (1.2ms)
+  Rendered sessions/new.html.erb (4.0ms)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-08-03 23:13:52 -0400
+Started GET "/auth/facebook/callback?code=AQBCGsaWfYF_vx0fUqZcPNMTQuuNvKUzRwNvo2TMYKFrg4lT8noXaOLX7hJ3LAaaJn46LA0I9TdBFTwUx68Ht5BEPktYwJczVV8OEeXL8WLbWgTxNZKSaB9kuPSMxmefzjiDV5TesM37CFVvD5wooebjHQj1s7rAunNFCnk2xdpCCWnTuxG2T2gcO-c0EHdBW1nrJZmmDOy736v_7NsbNlpeEJvjf7ScVoTHzyLj5eIplKx1DSmKQiNUArfwhvVFWBiKnEraZqIGbZPmmCXxYrU5A5oPZ8XdOVtgyYrjYgsxqr_mastUnhOB2pTR2x2hoLflfIAJ9ZggFnTToXZNax3q&state=f992d9c2da0112c74b4087884c8b0398d083d69fe149a320" for 127.0.0.1 at 2018-08-03 23:14:00 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQBCGsaWfYF_vx0fUqZcPNMTQuuNvKUzRwNvo2TMYKFrg4lT8noXaOLX7hJ3LAaaJn46LA0I9TdBFTwUx68Ht5BEPktYwJczVV8OEeXL8WLbWgTxNZKSaB9kuPSMxmefzjiDV5TesM37CFVvD5wooebjHQj1s7rAunNFCnk2xdpCCWnTuxG2T2gcO-c0EHdBW1nrJZmmDOy736v_7NsbNlpeEJvjf7ScVoTHzyLj5eIplKx1DSmKQiNUArfwhvVFWBiKnEraZqIGbZPmmCXxYrU5A5oPZ8XdOVtgyYrjYgsxqr_mastUnhOB2pTR2x2hoLflfIAJ9ZggFnTToXZNax3q", "state"=>"f992d9c2da0112c74b4087884c8b0398d083d69fe149a320"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", 4395504565585], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Marissa Zhong"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "facebook_user"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "email", "image_url", "uid") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Marissa Zhong"], ["password_digest", "0"], ["email", "facebook_user"], ["image_url", "http://graph.facebook.com/v2.10/4395504565585/picture"], ["uid", 4395504565585]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "pantries" ("user_id") VALUES (?)[0m  [["user_id", 2]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://localhost:3000/users/2
+Completed 302 Found in 15ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-08-03 23:14:00 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (1.5ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered recipes/_index.html.erb (1.3ms)
+  Rendered users/show.html.erb within layouts/application (6.7ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2018-08-03 23:14:15 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  Rendered recipes/show.html.erb within layouts/application (5.1ms)
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pantries/2" for 127.0.0.1 at 2018-08-03 23:14:23 -0400
+Processing by PantriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.1ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 1]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 2], ["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 2]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 2], ["id", 10], ["LIMIT", 1]]
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredientsRecipe Load (0.2ms)[0m  [1m[34mSELECT "ingredients_recipes".* FROM "ingredients_recipes" WHERE "ingredients_recipes"."recipe_id" = ?[0m  [["recipe_id", 3]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngredient Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? AND "ingredients"."id" = ? LIMIT ?[0m  [["pantry_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendering pantries/show.html.erb within layouts/application
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "ingredients_pantries" ON "ingredients"."id" = "ingredients_pantries"."ingredient_id" WHERE "ingredients_pantries"."pantry_id" = ? LIMIT ?[0m  [["pantry_id", 2], ["LIMIT", 1]]
+  Rendered pantries/show.html.erb within layouts/application (2.4ms)
+  [1m[36mCACHE Pantry Load (0.0ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 12.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2018-08-03 23:14:29 -0400
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (3.1ms)
+  Rendered recipes/new.html.erb within layouts/application (5.3ms)
+  [1m[36mPantry Load (0.2ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-08-03 23:14:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_index.html.erb (2.0ms)
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered recipes/_index.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (7.2ms)
+  [1m[36mPantry Load (0.1ms)[0m  [1m[34mSELECT  "pantries".* FROM "pantries" WHERE "pantries"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 17.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/signout" for 127.0.0.1 at 2018-08-03 23:14:50 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RR8EoyecEUysjuqvEoOoD36DwmLDLVdQJLyCNPbe2VVLAsv+SUFhab3FNUID3syIol86OlQ1lO1gJc59k7pYhQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to https://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-03 23:14:50 -0400
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (0.4ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+

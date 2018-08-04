@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
       end
     elsif auth['uid'] # Facebook Login
       @user = User.find_by(:uid => auth['uid'])
-      if !@user # create new user
+      if !@user # create new user - should be moved to user controller
         @user = User.new(:uid => auth['uid']) do |u|
           u.username = auth['info']['name']
           u.image_url = auth['info']['image']

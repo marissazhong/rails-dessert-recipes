@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
         render :'users/show' # user home page
     end
 
+    # shows individual recipe
     def show
     end
 
