@@ -4,6 +4,7 @@ class PantriesController < ApplicationController
     before_action :require_logged_in
 
     def show
+        @recipes = Recipe.all_by_pantry(@pantry.id)
     end
 
     def edit

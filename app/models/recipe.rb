@@ -18,4 +18,24 @@ class Recipe < ActiveRecord::Base
             end
         end
     end
+
+    def by_pantry(pantry_id)
+        pantry = Pantry.find(pantry_id)
+        self.ingredients_recipes.each do |ingredient|
+            if !pantry.ingredients.include?(Ingredient.find(ingredient["ingredient_id"]))
+                return false
+            end
+        end
+        return true
+    end
+
+    def self.all_by_pantry(pantry_id)
+        all_recipes = []
+        self.all.each do |recipe|
+            if recipe.by_pantry(pantry_id)
+                all_recipes << recipe
+            end
+        end
+        all_recipes
+    end
 end
