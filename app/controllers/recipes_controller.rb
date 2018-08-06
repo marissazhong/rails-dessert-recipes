@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
     before_action :set_user
     before_action :check_user, only: [:edit, :update, :destroy]
 
-    # /recipes index page showing user's recipes and all recipes
+    # index page showing user's recipes and all recipes
     def index
         @recipes = Recipe.all
         redirect_to user_path(@user) # user home page
@@ -14,11 +14,13 @@ class RecipesController < ApplicationController
     def show
     end
 
+    # shows new recipe form
     def new
         @recipe = Recipe.new
         @recipe.ingredients_recipes.build(input_name: 'flour', quantity: '2 cups')
     end
 
+    # creates new recipe
     def create
         @recipe = @user.recipes.build(recipe_params)
         @recipe.directions = params[:recipe][:directions].values.delete_if {|v| v.empty?}
@@ -30,9 +32,12 @@ class RecipesController < ApplicationController
 
     end
 
+    # shows edit recipe form
     def edit
     end
 
+
+    # updates recipe
     def update
         @recipe.update(recipe_params)
         @recipe.directions = params[:recipe][:directions].values.delete_if {|v| v.empty?}
@@ -43,6 +48,7 @@ class RecipesController < ApplicationController
         end
     end
 
+    # deletes recipe
     def destroy
         @recipe.destroy
         redirect_to user_path(@user)

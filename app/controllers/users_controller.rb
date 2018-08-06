@@ -3,11 +3,13 @@ class UsersController < ApplicationController
     before_action :check_user, only: [:show, :edit, :update, :destroy]
     before_action :all_recipes, only: [:show]
 
+    # shows signup page
     def new
         @user = User.new
         render layout: false
     end
     
+    # creates new user
     def create
         @user = User.new(user_params)
         if @user.save
@@ -20,15 +22,18 @@ class UsersController < ApplicationController
         end
     end
     
+    # shows user homepage
     def show
     end
 
+    # shows edit user credentials page
     def edit
         if @user.email == "facebook_user"
             redirect_to user_path(@user)
         end
     end
   
+    # updates user credentials
     def update
         if @user.update(user_params)
             redirect_to @user, notice: 'User was successfully updated.'
@@ -37,6 +42,7 @@ class UsersController < ApplicationController
         end
     end
 
+    # deletes user
     def destroy
         @user.destroy
         redirect_to signout_path
