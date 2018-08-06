@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   end
   resources :pantries, only: [:show, :edit, :update, :destroy]
   resources :ingredients, only: [:index]
+  get "/fastest", to: "recipes#fastest"
+
 end

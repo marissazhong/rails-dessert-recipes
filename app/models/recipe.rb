@@ -38,4 +38,8 @@ class Recipe < ActiveRecord::Base
         end
         all_recipes
     end
+
+    def self.fastest
+        order('prep_time').limit(5)
+    end
 end

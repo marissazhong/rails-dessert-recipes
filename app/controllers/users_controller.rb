@@ -21,6 +21,21 @@ class UsersController < ApplicationController
             render :new, layout: false
         end
     end
+
+    # creates new user
+    def create_fb_user
+        @user = User.new(:uid => auth['uid']) do |u|
+            u.username = auth['info']['name']
+            u.image_url = auth['info']['image']
+          end
+          @pantry = Pantry.create(user_id: @user.id)
+          @user.pantry = @pantry
+          @user.email = "facebook_user"
+          @user.password_digest = "0"
+          @user.save
+        session[:user_id] = @user.try(:id)
+        redirect_to user_path(@user)
+    end
     
     # shows user homepage
     def show

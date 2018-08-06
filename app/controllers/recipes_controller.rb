@@ -36,7 +36,6 @@ class RecipesController < ApplicationController
     def edit
     end
 
-
     # updates recipe
     def update
         @recipe.update(recipe_params)
@@ -52,6 +51,10 @@ class RecipesController < ApplicationController
     def destroy
         @recipe.destroy
         redirect_to user_path(@user)
+    end
+
+    def fastest
+        @recipes = Recipe.fastest
     end
 
     private
