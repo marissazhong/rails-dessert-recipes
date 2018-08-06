@@ -1,12 +1,13 @@
 class RecipesController < ApplicationController
     before_action :set_recipe, only: [:show, :edit, :update, :destroy]
     before_action :set_user
+    before_action :check_user, only: [:edit, :update, :destroy]
     before_action :require_logged_in
 
     # /recipes index page showing user's recipes and all recipes
     def index
         @recipes = Recipe.all
-        render :'users/show' # user home page
+        redirect_to user_path(@user) # user home page
     end
 
     # shows individual recipe
@@ -48,6 +49,13 @@ class RecipesController < ApplicationController
     end
 
     private
+
+        def check_user
+            @user = User.find(@recipe.user_id)
+            if @user != current_user
+                redirect_to user_path(current_user)
+            end
+        end
 
         def recipe_params
             params.require(:recipe).permit(:name, :prep_time, :cook_time, ingredients_recipes_attributes: [:input_name, :quantity])

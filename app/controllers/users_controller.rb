@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show, :edit, :update, :destroy]
+    before_action :check_user, only: [:show, :edit, :update, :destroy]
     before_action :all_recipes, only: [:show]
     before_action :require_logged_in, except: [:new, :create]
 
@@ -44,8 +44,11 @@ class UsersController < ApplicationController
 
     private
 
-    def set_user
+    def check_user
         @user = User.find(params[:id])
+        if @user != current_user
+          redirect_to user_path(current_user)
+        end
     end
     
     def all_recipes

@@ -19,7 +19,7 @@
 
 <% if !@recipes.empty? %>
     <% @recipes.each do |recipe| %>
-        <%= link_to recipe.name, recipe_path %><br>
+        <%= link_to recipe.name, recipe_path(recipe) %><br>
     <% end %>
 <% else %>
     <p>Oops! There is not enough in the pantry to make our recipes.<br>
