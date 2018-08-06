@@ -1,8 +1,8 @@
 class RecipesController < ApplicationController
+    before_action :require_logged_in
     before_action :set_recipe, only: [:show, :edit, :update, :destroy]
     before_action :set_user
     before_action :check_user, only: [:edit, :update, :destroy]
-    before_action :require_logged_in
 
     # /recipes index page showing user's recipes and all recipes
     def index

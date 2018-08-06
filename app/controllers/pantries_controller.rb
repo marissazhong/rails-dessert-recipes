@@ -1,7 +1,8 @@
 class PantriesController < ApplicationController
+    before_action :require_logged_in
     before_action :set_pantry
     before_action :set_ingredients, only: [:edit, :update]
-    before_action :require_logged_in
+    before_action :check_user
 
     # shows recipes for which pantry includes all ingredients
     def show
@@ -40,6 +41,13 @@ class PantriesController < ApplicationController
     end
 
     private
+
+    def check_user
+        @user = User.find(params[:id])
+        if @user != current_user
+          redirect_to pantry_path(current_user)
+        end
+    end
 
     def set_pantry
         @user = current_user

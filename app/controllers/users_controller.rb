@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+    before_action :require_logged_in, except: [:new, :create]
     before_action :check_user, only: [:show, :edit, :update, :destroy]
     before_action :all_recipes, only: [:show]
-    before_action :require_logged_in, except: [:new, :create]
 
     def new
         @user = User.new
